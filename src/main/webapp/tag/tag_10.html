@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+/* CSS 주석 */
+
+table, th, td {
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+}
+
+</style>
+
+</head>
+<body>
+
+<h1>테이블 태그</h1>
+<h3>colspan 속성, rowspan 속성</h3>
+
+<hr>
+
+<table>
+
+<tr>
+	<td>1x1셀</td>
+	<td>1x2셀</td>
+	
+	<!-- 행 확장 : 위아래로 커짐 -->
+	<td rowspan="3">1x3셀</td>
+</tr>
+
+<tr>
+	<td>2x1셀</td>
+	<td>2x2셀</td>
+	<td>2x3셀</td>	<!-- 윗 행의 확장때문에 오른쪽으로 밀려남 -->
+</tr>
+
+<tr>
+	<!-- 열 확장 : 좌우로 커짐 -->
+	<td colspan="2">3x1셀(글자들 많이)</td>
+</tr>
+
+</table>
+
+</body>
+</html>

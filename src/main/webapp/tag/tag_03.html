@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<h1>글자 관련 태그</h1>
+<h3>hn, p, pre, blockqoute</h3>
+
+
+<div style="font-size: 25px;">
+
+기본텍스트
+<!-- 고정된 크기가 아니라 기본텍스트에 대한 배율로 크기가 달라짐 -->
+<!-- 블록요소 -->
+
+<h1>Heading 1</h1>	<!-- 2em : 기본 텍스트의 2배 -->
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>	<!-- 기본텍스트 크기와 같음 -->
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+
+</div>
+
+
+<hr>
+
+
+<div>
+
+<p>가나다라마<br>
+바사아자차<br>
+카타파하</p>
+
+<!-- ** br태그 : line BReak, 줄바꿈 태그 -->
+
+<p>문단테스트으으ㅡ으응</p>
+<p>가나다라마바사아자차카타파하</p>
+<p>마지막 문단<br> 단아다라<br>아라</p>
+
+<!-- <p>태그는 상하 여백(margin)을 가지고 있음 -->
+<!-- 	-> 상하여백은 다른 태그 요소를 밀어냄 -->
+
+<hr>
+
+<!-- 잘못 쓰는 경우 -->
+<!-- p는 자식태그를 가지지 못하므로 프로그램이 자체적으로 </p>로 고쳐줌 -->
+
+<!-- 닫는 태그 없이 다음 <p>태그가 나오면 안됨 -->
+<!-- 브라우저가 알아서 닫는 태그를 넣어주지만 잘 작성된 코드는 아님 -->
+<p>가나다라마바사
+<p>자차카타파하</p>
+
+<hr>
+
+<p>AB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CDE
+FGH&emsp;&emsp;&emsp;I&ensp;&ensp;&ensp;&ensp;&ensp;JK</p>
+
+<!-- ** nbsp; -->
+<!-- 	No Breaking SPace : 개행없이 띄어쓰기 / 띄어쓰기 한 칸 -->
+
+<!-- ** emsp; -->
+<!-- 	EleMent SPace : em크기(글자 크기)만큼 띄어쓰기 한 칸-->
+<!-- 	-> element라는 단위가 있음 / 글자크기 -->
+
+<!-- ** ensp; -->
+<!-- 	emsp크기의 반절만큼 띄어쓰기 한 칸 -->
+
+<!-- 이걸로 글자 사이 간격을 조 정하는 것 아님 필요하면 div로 margin 간격 조정해야 함
+		문단 시작 들여쓰기정도에만 쓰는 것 -->
+
+
+</div>
+
+<!-- ** pre태그 : 입력한 문단(텍스트)의 서식을 그대로 브라우저에 표현 -->
+<pre>
+A              BCDE
+안	녕	하	세	요
+pre		   	te	  	st
+</pre>
+
+<pre>
+import java.util.Scanner;
+
+public class Test {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt();
+		
+		System.out.println("num : " + num);
+	}
+}
+</pre>
+
+<hr>
+
+<div>
+
+
+<!-- ** blockquote태그 : 인용된 문구에 사용 / 들여쓰기로 표현됨 -->
+<blockquote>"오늘 날씨가 쌀쌀하네요"</blockquote>
+
+</div>
+
+
+</body>
+</html>

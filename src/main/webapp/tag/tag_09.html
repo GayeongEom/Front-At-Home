@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+/* CSS 주석 */
+
+table, th, td {
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+}
+
+</style>
+
+</head>
+<body>
+
+<h1>테이블 태그</h1>
+<h3>caption, thead, tbody, tfoot</h3>
+
+
+<table>
+
+<!-- 테이블에 대한 설명(이름) -->
+<caption>전화번호부</caption>
+
+<thead>	<!-- 테이블의 머릿글, 최상단행으로 고정 -->
+<tr>
+	<th>이름</th>
+	<th>주소</th>
+	<th>전화번호</th>
+</tr>
+</thead>
+
+
+<tbody>	<!-- 테이블의 본문, <thead>와 <tfoot> 사이에 위치 -->
+<tr>
+	<td>Alice1</td>
+	<td>서울시 강남구</td>
+	<td>01011111111</td>
+</tr>
+
+<tr>
+	<td>Alice2</td>
+	<td>서울시 강남구</td>
+	<td>01022222222</td>
+</tr>
+
+<tr>
+	<td>Alice3</td>
+	<td>서울시 강남구</td>
+	<td>01033333333</td>
+</tr>
+</tbody>
+
+
+<tfoot>	<!-- 테이블의 바닥글, 최하단 행으로 고정 -->
+<tr>
+	<th>NAME</th>
+	<th>ADDRESS</th>
+	<th>PHONE</th>
+</tr>
+</tfoot>
+</table>
+
+
+</body>
+</html>
