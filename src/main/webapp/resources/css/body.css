@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+/* body 태그 선택자 - body 태그를 선택 */
+body{
+	
+	/* 글자 색상: 토마토 */
+	color: tomato;
+	
+}
+
+/* css파일에 존재하지 않는 외부 css파일을 임포트하면 안됨 */
+/* @import 되는 css파일에서 추가 @import 하지는 않음 */
+@import url(../resources/css/other3.css);
+@import url(../resources/css/other4.css);

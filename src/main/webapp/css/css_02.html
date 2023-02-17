@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+/* 외부 CSS파일 로드하기 */
+/* @import url(/resources/css/body.css); */
+@import url(../resources/css/body.css);
+
+/* @import를 이용하여 여러개의 CSS파일 로드 가능 */
+/* 		-> URL이 잘못되었다면 404 에러가 나옴 -> 브라우저 개발자모드 네트워크 */
+@import url(../resources/css/other1.css);
+@import url(../resources/css/other2.css);
+
+</style>
+
+</head>
+<body>
+
+<h1>외부 CSS파일 로드</h1>
+<h3>@import 방식</h3>
+<hr>
+
+<p>안녕하세요</p>
+<p>하이</p>
+<span>반가워요</span>
+
+
+</body>
+</html>
