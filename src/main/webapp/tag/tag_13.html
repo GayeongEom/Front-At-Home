@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>form 태그</h1>
+<h3>datalist, textarea, select</h3>
+<hr>
+
+
+<form action="" method="get">
+
+<!-- <datalist> 태그는 화면에 보이지 않음 -->
+<datalist id="fruits">
+	<option>사과</option>
+	<option value="banana">바나나</option>
+	<option value="체리">
+</datalist>
+
+<input list="fruits" name="f">
+
+<!-- <datalist>의 <option>항목들을 <input>태그의 자동완성 목록으로 보여줌 -->
+<!-- 	<datalist>의 자식태그인 <option>태그가 선택항목이 됨 -->
+<!-- 	<option>태그에 value 속성이 적용되면 value 속성값으로 입력되고 없으면 innerHTML 값으로 입력됨 -->
+
+
+
+<hr>
+
+
+
+<label for="content">본문</label><br>
+<textarea rows="5" cols="3" name="content" id="content"
+placeholder="본문을 입력하세요">AppleBAnanaCherry</textarea>
+
+<!-- <textarea> 태그에는 value 속성이 없음 -> 표준속성이 아님 -->
+<!-- 	innerHTML을 이용하여 전송데이터를 설정, 입력 기본값도 설정할 수 있음 -->
+
+<br><br>
+
+<button>전송</button>
+
+</form>
+
+</body>
+</html>

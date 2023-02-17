@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>form 태그</h1>
+<h3>input태그의 type 속성</h3>
+<hr>
+
+
+<!-- ** focus 속성 : 키보드 입력을 받아들일 수 있는 상태 -->
+
+<!-- ** <form> 태그에 <input type="text"> 태그가 단독으로 존재할 때 엔터키 입력으로 submit 할 수 있음 -->
+
+<!-- ** name 속성 : 요청데이터의 항목 이름을 설정 -->
+<!-- 	name 속성이 없는 입력 창 데이터를 전송(submit)할 수 없음 -->
+
+<!-- ** id 속성 : 해당 HTML문서 내에서 태그에 고유한 식별값(이름)을 설정 -->
+
+<!-- ** name 속성값과 id 속성값을 일반적으로 똑같은 문자로 설정 -->
+<!-- 	!!두 속성의 역할/목적 구분 철저히!! -->
+
+<!-- ** <label> 태그 : "입력창"과 "설명 텍스트"를 연결하는 태그 -->
+<!-- 	"설명 텍스트"를 클릭하면 "입력창"으로 포커스가 넘어감 -->
+
+<!-- ** required 속성 : 입력값 없이 submit이 안되도록 설정 -->
+<!-- 	submit 할 때 필수 입력값이라는 경고 문구가 출력됨 -->
+<!--  	-> 속성값을 적지 않고 required라고만 적어도 특성이 적용됨 -->
+
+<!-- ** required, checked, selected, readonly, disable -> 속성의 존재유무로만 설정항목이 되는 속성들 -->
+
+
+
+<form action="" method="get">
+
+<label>
+아이디
+<input type="text" name="userid" id="uid"
+placeholder = "아이디를 입력하세요"
+size="10" value="Apple"
+maxlength="7"
+reqiured="required"
+autocomplete="on"
+>
+</label>
+
+<!-- placeholder : 빈 칸일 때 나타나는 메시지 -->
+<!-- autocomplete : 자동완성 유무 -->
+
+<br>
+
+<label for="upw">패스워드</label>
+<input type="password" name="userpwd" id="upw"
+placeholder="비밀번호를 입력하세요">
+
+
+
+<hr>
+
+
+
+<label for="chk1">체크1</label>
+<input type="checkbox" id="chk1" name="chk" value="A">
+|
+<label for="chk2">체크2</label>
+<input type="checkbox" id="chk2" name="chk" value="B" checked>
+|
+<label for="chk3">체크3</label>
+<input type="checkbox" id="chk3" name="chk" value="C" checked="checked">
+
+<!-- checked 하지 않고 submit 하면 아예 전달데이터가 전달되지 않음 -->
+<!-- 체크된 항목의 값은 "on"을 기본으로 전달, value속성을 지정하면 지정된 값을 전달 -->
+
+<!-- 같은 name으로 지정된 체크박스들은 같은 카테고리로 표현됨 -->
+<!-- 	-> value 속성값을 각각 다르게 설정하도록! -->
+<!-- 	ex) chk=A&chk=B&chk=C -->
+
+
+
+<hr>
+
+
+
+<label><input type="radio" name="gender" value="m">남성</label>
+<label><input type="radio" name="gender" value="f" checked>여성</label>
+<label><input type="radio" name="gender" value="o">기타</label>
+
+<!-- radio는 checkbox와 비슷한 동작을 함 -->
+<!-- 같은 name으로 설정된 radio들은 같은 라디오 그룹(Radio Group)이 됨 -->
+<!-- 	-> 라디오 그룹 내에서 한 개 항목만 선택할 수 있음 -->
+
+
+
+<hr>
+
+
+
+<!-- 일반 버튼 : 주로 click을 감지하도록 작성 -->
+<!-- 	focus 상태에서 space bar를 눌러도 click으로 처리됨 -->
+
+<input type="button" value="버튼">
+
+<input type="button" value="알림창"
+onclick="alert('알림! 클릭 감지!')"
+onkeyup="alert('keyup')">
+
+
+
+<hr>
+
+
+
+<!-- SUBMIT 버튼 : <form>태그에 작성된 데이터를 서버로 전송 -->
+<!-- 	기본적으로 "제출"문구로 보이지만 value 속성값으로 변경할 수 있음 -->
+
+<input type="submit" value="변경">
+
+
+
+<hr>
+
+
+
+<!--  RESET 버튼 : 초기화 버튼 -->
+<!-- 	페이지 새로고침 없이 입력된 창들을 초기상태로 되돌림 -->
+
+<input type="reset">
+
+
+
+<hr>
+
+
+
+<!-- 버튼 태그 : 일반 버튼이 아닌 submit 버튼으로 만들어짐 -->
+<!-- 	type으로 submit, button, reset 설정 가능 / 기본값은 submit -->
+<!-- 	버튼태그에  type="button"을 설정하면 일반버튼이 됨 -->
+
+<button>버튼 태그는 submit 버튼으로 만들어 짐</button>
+<button type="button">일반 버튼</button>
+
+
+
+<hr>
+
+
+
+<!-- 파일 선택창 : 선택된 파일의 이름만 전송 -->
+<!-- 	multiple 속성을 적용하면 다중 파일 선택 가능 -->
+<input type="file" name="f">
+<input type="file" name="f_multi" multiple="multiple">
+
+<hr>
+
+<input type="submit" value="전송">
+<button>전송</button>
+
+
+
+<hr>
+
+
+
+<!-- HTML5에서 추가된 type 속성값 -->
+
+<!-- 	숫자만 입력 가능 -->
+<!-- 	max, min 속성은 submit 될 때 데이터 검증에 사용됨 -->
+<input type="number" name="n" min="10" max="50" step="5">
+
+<!-- 범위 내에서 숫자를 선택하는 타입 -->
+<!-- 	기본 범위는 0~100 / 기본 선택 숫자는 50 -->
+RANGE
+<input type="range" name="r" min="100" max="1000" step="100">
+
+
+
+<hr>
+
+
+
+<!-- 이메일 형식 유지 : submit 할 때 "텍스트@텍스트"형식을 검사 -->
+EMAIL
+<input type="email" name="e">
+
+
+
+<hr>
+
+
+
+<!-- URL 형식 유지 : "프로토콜://도메인" 형식 검사 -->
+URL
+<input type="url" name="u">
+
+
+
+<hr>
+
+
+
+<!-- 시간피커, Time Picker : "HH24:MI"형식으로 시간데이터를 전송 -->
+TIME
+<input type="time" name="t">
+
+
+
+<hr>
+
+
+
+<!-- 색상 피커, Color Picker : RGB 색상값을 16진수표기형식에 맞게 전송 -->
+COLOR
+<input type="color" name="c">
+
+</form>
+
+</body>
+</html>

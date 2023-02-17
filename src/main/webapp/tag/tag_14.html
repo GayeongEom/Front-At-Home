@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- HTML문서에 CSS스타일을 적용 -->
+<style type="text/css">
+
+/* 모든 label 태그에 CSS 스타일 적용 */
+label {
+	/* 	display: inline; */
+	display: inline-block;
+	width: 70px
+}
+
+/*	display: inline; 요소는 너비(width)를 설정해도 화면에 반영되지 않음 */
+/*	label태그는 inline 요소이므로 width가 반영되도록 display: inline-block;으로 변경해야 함 */
+</style>
+
+</head>
+<body>
+
+<h1>form 태그</h1>
+<h3>fieldset, legend</h3>
+<hr>
+
+<form action="" method="get">
+
+	<fieldset style="width: 270px";>
+
+		<legend>사용자 정보</legend>
+
+		<label for="userid">아이디</label> 
+		<input type="text" name="userid" id="userid"><br> 
+		
+		<label for="userpw">패스워드</label> 
+		<input type="password" name="userpw" id="userpw"><br>
+
+	</fieldset>
+
+	<fieldset style="width: 270px;">
+
+		<legend>취미</legend>
+
+		<label><input type="checkbox" name="hobby" value="book">독서</label>
+		<label><input type="checkbox" name="hobby" value="movie">영화</label>
+		<label><input type="checkbox" name="hobby" value="music">음악</label>
+
+	</fieldset>
+	
+	<br>
+	<input type="submit" value="전송">
+
+</form>
+
+</body>
+</html>
