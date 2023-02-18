@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+/* 고정크기 단위 설정 */
+body{
+	font-size: 30px;
+}
+
+html{
+	font-size: 60px;
+}
+
+div{
+	font-size: 70px;
+	width: 900px;
+}
+
+/* 가변크기 단위 설정 */
+p{
+ 	/* 부모요소인 <body>의 font-size 설정값보다 1.5배 */ 
+/* 	font-size: 1.5em; */
+	
+	/* 최상위부모요소인 <html>의 font-size 설정값보다 1.5배 */
+/* 	font-size: 1.5rem; */
+
+	/* 부모요소인 <body>의 font-size 설정값보다 1.3배 */ 
+/*  	font-size: 130%;  */
+
+	/* 부모요소인 <body>의 'x'글자의 높이에 대한 1배 */ 
+/*  	font-size: 1ex;  */
+
+	/* 부모요소인 <body>의 width 설정값의 50% */ 
+/* 	width: 50%; */
+
+	/* font-size의 설정값에 대한 1.3배 */ 
+	/*	상속받은 font-size가 있으면 상속받은 크기가 기준 */
+	width: 1.3em;
+
+}
+
+</style>
+
+</head>
+<body>
+
+<h1>CSS 크기 단위</h1>
+<hr>
+
+body 안녕! x
+<p>p 안녕! x</p>
+
+<div>div 안녕하세요! TEST</div>
+
+</body>
+</html>
