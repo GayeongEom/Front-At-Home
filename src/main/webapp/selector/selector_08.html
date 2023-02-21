@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+/* 최상위 요소 선택 */
+/*
+:root{
+	color: #666;
+}
+*/
+
+html {
+	color: #666;
+}
+
+/* ---------------------------------------------------------- */
+
+/* 두번째 자식인 li태그 선택 */
+/*	형제 노드들 중에서 2번째인 li */
+li:nth-child(2) {
+	color: red;
+}
+
+/* 뒤에서 두번째 자식이 li인 */
+/* 뒤에서 두번째 자식인 li 태그 선택 */
+li:nth-last-child(2) {
+	text-decoration: underline;
+}
+
+/* third의 자손들 중에서 뒤에서 첫번째 자식인 li태그 선택 */
+#third li:nth-last-child(1) {
+	text-decoration: line-through;
+}
+
+/* 첫번째 자식 요소 선택 */
+/* 형제들 중에서 첫번째인 요소 */
+:first-child {
+	border: 1px solid orange;
+}
+
+/* 형제들 중 첫번째에 위치한 li */
+/* 첫번째 자식인 li요소 선택 */
+li:first-child {
+	border: 1px solid red;
+}
+
+/* 마지막 자식인 li 요소 선택 */
+li:last-child {
+	border: 1px dotted blue;
+}
+
+/* ---------------------------------------------------------- */
+
+/* 형제요소 없이 단독으로 존재하는 li태그 선택 */
+li:only-child {
+	background-color: tomato;
+}
+
+/* ---------------------------------------------------------- */
+
+/* 형제 요소들 중에서 유일한 타입의 태그를 선택 */
+/* 형제들 중에서 ul이 없는 ul태그 선택 */
+ul:only-of-type{
+	background-color: yellow;
+}
+
+</style>
+
+</head>
+<body>
+
+<h1>가상 클래스 선택자</h1>
+<h3>순서 기반</h3>
+<hr>
+
+<ul>
+	<li>HTML5</li>
+	<li>CSS3</li>
+	<li>Javascript</li>
+	<li>jQuery</li>
+	<li>JSP</li>
+</ul>
+
+<ul>
+	<li class="only">HTML5</li>
+</ul>
+
+<ul id="third">
+	<li>CSS</li>
+	<li>선택자</li>
+	<ul>
+		<li>ID선택자</li>
+		<li>CLASS선택자</li>
+	</ul>
+</ul>
+
+
+
+</body>
+</html>

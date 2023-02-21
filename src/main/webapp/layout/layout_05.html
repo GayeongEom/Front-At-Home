@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+span {
+	font-size: 30px;
+}
+
+#span1 { background: red; }
+#span2 { background: green; }
+/* #span3 { border: 1px solid blue; }*/ /* 인라인요소는 내용물 기준이므로 border를 적용했을 때 적절치 않음 */ 
+#span3 { background: blue; }
+
+#span1 { float: left; } /* span1과 2 사이 공백이 사라짐 */
+#span2 { float: right; }
+
+div {
+	border: 1px solid #ccc;
+	
+	/* 내부 컨텐츠 정렬 */
+	/* 	블록 요소의 내부를 정렬 */
+	/* 	인라인 요소, 글자들을 정렬할 수 있음 */
+	text-align: center;	/* 글자와 같은 인라인 요소들도 정렬해줌 */
+
+	/* 블록 요소의 너비 지정 */
+	/*	기본값은 100% (부모요소의 너비만큼 가득) */
+	/*	고정 크기로 지정하면 부모 요소 크기에서 남는 만큼 자동 마진(auto margin)이 생김 */
+	width: 900px;
+	
+	/* 블록요소의 외부 정렬 */
+	/*	좌우 자동마진이 균등하게 나눠짐 */
+	/* 	블록 요소가 가운데로 보여짐 */
+	margin: 0 auto;
+
+}
+
+
+</style>
+
+
+</head>
+<body>
+
+<div>
+
+	<span id="span1">SPAN1</span> <!-- 이 곳에 적용된 개행조차 띄어쓰기로 인식 -->
+	<span id="span2">SPAN2</span>
+	<span id="span3">SPAN3SPAN3SPAN3 SPAN3SPAN3SPAN3</span> <!-- 띄어쓰기를 기준으로 단어로 인식 -->
+
+
+</div>
+
+</body>
+</html>

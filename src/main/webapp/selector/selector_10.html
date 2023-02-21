@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+/* 보여지는 화면의 첫번째 줄 선택 */
+p::first-line{
+	color: blue;
+}
+
+/* 문장이 첫번째 글자 선택 */
+p::first-letter {
+	color: red;
+	font-size: 20px;
+}
+
+/* ------------------------------------------------------------ */
+
+/* 브라우저에서 드래그시 HTML 코드로 직접 작성한 것이 아닌 가상요소라서 선택이 되지 않음 */
+/* span의 자식처럼 첫번재로 포함되어져 있음 */
+/* span 태그의 앞부분에 가상요소를 추가 */
+span::before {
+
+	/* 가상 요소에 적용될 컨텐츠(내용물) */
+/* 	content: "span <br> before"; */	/* 태그를 받아들이지 못함 */ 
+	content: "span \A before"; /*	-> 개행을 하기 위해서는 공백문자 처리방식을 지정해줘야 함 */
+	
+	/* \A : 개행문자(ASCII 10)를 나타냄 */
+	
+	/* 공백문자 처리방식 변경 */
+	white-space: pre;
+	
+	/* 가상요소에 CSS스타일 적용 가능 */
+	color: orange;
+	background-color: gray;
+	
+	/* list의 도형도 ::marker로 들어가있음 -> 가상요소 */
+}
+
+/* ------------------------------------------------------------ */
+
+.new::after {
+	content: "new";
+	
+	font-size: 10px;
+	background-color: #f66;
+	color: #fff;
+	
+	padding: 0 2px; /* 상하 좌우 */
+	
+	border-radius: 3px;
+	
+	/* 수직 정렬에 대한 속성 */
+/* 	vertical-align: baseline; */
+	vertical-align: middle;
+
+}
+
+/* ------------------------------------------------------------ */
+
+/* 클래스 속성값으로 new가 없는 p태그 선택 */
+p:not(.new) {
+	background-color: #eee;
+}
+
+</style>
+
+</head>
+<body>
+
+<p class="new">첫 번째(p)</p>
+<span>두 번째(span)</span>
+<div class="new">세 번째</div>
+<p>네 번째(p). 따뜻한 생생하며, 남는 그들의 그들은
+얼마나 피가 많이 지혜는 황금시대다. 
+풀이 청춘이 속에 이상은 것은 천자만홍이 아니다. 
+영원히 꽃이 보는 천하를 돋고, 공자는 인생에 싸인 끓는다. </p>
+
+
+</body>
+</html>

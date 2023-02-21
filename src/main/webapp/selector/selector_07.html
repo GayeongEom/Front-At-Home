@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+/* 마우스가 div 위에 올라간 상태의 div 태그 요소 선택 */
+div:hover {
+	color: red;
+}
+
+/* 띄어쓰기 하나로 의미가 달라지므로 유의할 것! */
+/* 마우스가 span 위에 올라간 상태의 span 태그 요소 선택 */
+span:hover{
+	background-color: green;
+}
+
+/* ---------------------------------------------------------------- */
+
+/* 마우스 눌림이 발생한 span 태그 선택 */
+/*	버튼같은 곳에 많이 사용 */
+span:active{
+	color: orange;
+	font-size: 30px;
+}
+
+/* 마우스 눌림이 발생한 button 태그 선택 */
+button:active {
+	color: blue;
+}
+
+/* 마우스가 올라간 상태에 타입이 버튼인 인풋 속성 확인 */
+/* 마우스 눌림이 발생한 type 속성이 "button"인 input 태그 */
+input[type="button"]:active {
+	color: tomato;
+}
+
+/* ---------------------------------------------------------------- */
+
+/* 방문 전 상태의 a태그 선택 */
+a:link {
+	color: green;
+	
+	/* 밑줄 제거 */
+	text-decoration: none;
+}
+
+/* 방문 후 상태의 a태그 선택 */
+a:visited {
+	color: red;
+}
+
+/* ---------------------------------------------------------------- */
+
+/* 비활성화 상태 : 사용자 입력 못받는 상태 */
+:disabled {
+	font-size: 8px;
+}
+
+/* 활성화 상태 : 사용자의 입력을 받아들이는 상태 */
+:enabled {
+	font-style: italic;
+}
+
+/* ---------------------------------------------------------------- */
+
+/* 체크된 상태의 태그 checkbox, radio */
+:checked {
+	width: 50px;
+	height: 50px;
+}
+
+/* 체크된 상태의 타입이 체크인 인풋박스의 인접한 형제인 레이블 */
+/* checked 상태의 type속성이 checkbox인 input태그의 인접한 형제 label태그 선택 */
+input[type="checkbox"]:checked + label{
+	color: blue;
+}
+
+#chk:checked + label{
+	background-color: tomato;
+}
+
+/* ---------------------------------------------------------------- */
+
+/* 포커스를 얻은 요소 선택 */
+:focus {
+	color: maroon;
+}
+/* focus : 포커스 상태를 얻었을 때 발생하는 이벤트 */
+/* blur : 포커스 상태를 잃었을 때 발생하는 이벤트 */
+
+/* ---------------------------------------------------------------- */
+
+/* 자식요소가 없는 요소 선택 */
+/*	<hr>이나 <input>같은 닫는 태그를 사용하지 않는 요소들도 전부 선택 */
+/* 너무 많아서 주석처리 */
+/* :empty { */
+/* 	height: 20px; */
+/* 	background: yellow; */
+/* } */
+
+
+div:empty { 
+	height: 20px; 
+	background: yellow; 
+} 
+
+</style>
+
+
+</head>
+<body>
+
+<div>
+
+<span>span태그 안쪽</span>span태그 바깥쪽<br>
+<input type="button" value="확인"><br>
+
+<a href="https://www.naver.com">네이버</a>
+<a href="https://www.daum.net">다음</a>
+<a href="https://www.daum.net">다음</a>
+<hr>
+
+<label><input type="checkbox">확인</label>
+<label><input type="radio">여기?</label>
+
+<input type="checkbox" id="chk">
+<label for="chk">체크</label>
+<hr>
+
+<button disabled="disabled">비활성 버튼</button>
+<button>활성버튼</button>
+<hr>
+
+<div></div>
+<input type="text">
+
+
+</div>
+
+
+
+
+</body>
+</html>

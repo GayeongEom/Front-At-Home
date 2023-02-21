@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+/* 전체 선택자 */
+/* 모든 태그를 선택 -> h1, style, hr 등등 리터럴리 모든 태그에 적용됨 */
+* {
+	
+	
+	/* 모든 태그를 선택하기 때문에 CSS가 적절하지 않게 설정되는 경우도 있음 */
+/* 	font-size: 20px; */
+
+	margin: 0;	/* 외부 여백(margin) 없애기 */
+	padding: 0; /* 내부 여백(padding) 없애기 */
+	
+	/* 크기단위를 설정해야하는 스타일 속성에 0을 주면 속성 설정을 제거한 것 처럼 화면에 보여짐 */
+
+}
+
+p { /* p태그를 선택한게 전체선택자보다 우선됨 */
+	/* 내부 여백 */
+	padding: 10px;
+	
+	/* 외부 여백 */
+	margin: 5px;
+	
+	/* 내부 영역까지만 배경색이 지정됨 */
+/* 	background: yellow; */
+/* 	background-color: tomato;	/* 상세하게 설정해주는게 좋음 */ 
+	
+	/* 배경으로 이미지를 지정 */
+/* 	background: url(https://i.imgur.com/09XtYSI.gif) */
+	background-image: url(https://i.imgur.com/09XtYSI.gif);	/* 상세 설정 */
+	
+	/* 글자색 */
+	color: cyan;
+	
+	
+}
+
+/* body 태그 선택자 */
+body{
+	/* 배경 이미지 파일 URL지정*/
+	background-image: url(https://i.imgur.com/yzawecO.gif);
+	
+	/* 배경 이미지의 크기 지정 */
+/* 	background-size: 600px 400px ; */
+/*   background-size: contain;  */
+  	background-size: cover;  
+	
+	/* 배경 이미지의 크기를 설정하는 방법 */
+	/* 1. 너비크기 높이크기 */
+	/* 		고정크기로 이미지를 설정 */
+	/* 2. contain */
+	/*		배경이 지정된 태그에 이미지가 다 보이도록 확대/축소 */
+	/* 3. cover */
+	/* 		요소를 전부 다 덮도록 이미지를 확대/축소 */
+	
+	/* 배경 이미지 반복 패턴 지정하기 */
+	/* repeat : x축, y축 모두 반복(기본값) */
+	/* no-repeat : 반복하지 않음 */
+	/* repeat-x : x축 반복 */
+	/* repeat-y : y축 반복 */
+/* 	background-repeat: repeat; */
+/* 	background-repeat: no-repeat; */	/* cover..? contain..?이랑 잘 맞음 */
+/* 	background-repeat: repeat-x; */
+	background-repeat: repeat-y;
+	
+}
+
+/* span 태그 선택자 */
+span {
+	/* 글자색: MAGENTA */
+	color: #f0f;
+	
+	/* 인라인요소는 크기 지정해도 소용이 없음 */
+	/* inline 요소는 너비, 높이 적용이 되지 않음 */
+	width: 50000px;
+	height: 40000px;
+	
+	/* inline 요소는 상하 margin이 적용되지 않음 */
+	margin: 40px;
+}
+
+/* div 태그 선택자 */
+div{
+	/* 블록요소라서 크기를 줄이면 남는 부분은 margin으로 채워짐 */
+	/* block요소에 너비를 설정할 경우 부모 요소에 남은 오른쪽 한 줄 영역은 자동 margin이 됨 */
+	width: 300px;
+	
+	height: 300px;
+	
+	/* 테두리 */
+	border: 1px solid #f00;
+	
+	margin: 20px;
+}
+
+</style>
+
+</head>
+<body>
+
+<h1>선택자</h1>
+<hr>
+
+<p>p 태그</p>
+<span>span 태그</span>
+<div>
+	div 태그
+	<p>div 태그 내 p 태그</p>
+	안녕 안녕 안녕
+</div>
+
+</body>
+</html>
