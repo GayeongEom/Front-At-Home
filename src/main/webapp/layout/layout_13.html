@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+#wrap div:nth-child(1) { background-color: #f66; }
+#wrap div:nth-child(2) { background-color: #6f6; }
+#wrap div:nth-child(3) { background-color: #66f; }
+#wrap div:nth-child(4) { background-color: #ff6; }
+#wrap div:nth-child(5) { background-color: #f6f; }
+
+#wrap {
+	width: 800px;
+	margin: 0 auto;
+	
+	display: table;
+	
+	/* 자식요소인 테이블셀들의 너비를 균일하게 설정 */
+	table-layout: fixed;
+}
+
+#wrap div {
+	text-align: center;
+	font-size: 40px;
+	height: 200px;
+
+/* 	width: 160px; */
+/* 	width: 20%; */
+	
+	
+	display: table-cell;
+	vertical-align: middle;
+}
+
+</style>
+
+</head>
+<body>
+
+<div id="wrap">
+	<div>A</div>
+	<div>B</div>
+ 	<div>C</div>
+	<div>D</div>
+	<div>E</div>
+	<div>F</div>
+	<div>G</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+/* dislpay: table; */
+table {
+
+/* 테이블이 자식들을 관리하는 것이 아니라 상속이 되는 속성, 안되는 속성이 있음 */
+
+	border: 1px solid #ccc;
+	
+	/* 내부 정렬 */
+	text-align: center;
+	
+	/* 외부 정렬 */
+/* 	margin: 20px; */
+	margin: 0 auto;
+	
+	padding: 5px;
+	
+	/* width: 300px 설정시 박스사이즈가 보더라서 컨텐츠, 패딩, 보더까지 해서 300px가 됨 */
+	width: 300px;
+	height: 250px;
+}
+
+/* display: table-row; */
+tr {
+	/* width, margin, padding, border는 화면에 적용되지 않음 */
+	width: 10px;
+	margin: 15px;
+	padding: 50px;
+	border: 1px solid black;
+	
+	/* height는 적용할 수 있음 */
+	/* 	직접 크기를 지정하지 않으면 자식요소의 높이만큼 같이 커짐 */
+	height: 100px;
+}
+
+/* display: table-cell; */
+th, td {
+
+	/* 둘 다 적용이 됨 */
+	width: 100px;
+	height: 110px;
+	
+	/* width는 <table>에 적용된 설정값을 우선 적용시킴 */
+	/* height는 콘텐츠의 최종 높이(총합)을 우선 적용시킴 */
+	
+	/* padding 적용 가능 */
+	padding: 5px;
+	
+	margin: 10px;
+}
+
+th {
+	border: 1px solid #f99;
+}
+td {
+	border: 1px solid #9f9;
+}
+
+/* height는 자식요소의 높이가 우선됨 -> 내용물때문에 */
+/* width는 부모요소의 너비가 우선됨 -> 내용물이 넘치면 길이로 길어짐 */
+
+</style>
+
+</head>
+<body>
+
+<table>
+
+<tr>
+	<th>하나</th>
+	<th>둘</th>
+	<th>셋</th>
+</tr>
+
+<tr>
+	<td>A</td>
+	<td>B</td>
+	<td>C</td>
+</tr>
+
+<tr>
+	<td>Apple</td>
+	<td>Banana</td>
+	<td>Cherry</td>
+</tr>
+
+</table>
+
+</body>
+</html>
