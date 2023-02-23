@@ -73,7 +73,7 @@ body {
 	text-align: center;
 }
 
-.product-list {
+[class*="list"] {
 	width: 735px;
 	margin: 0 auto;
 }
@@ -92,6 +92,10 @@ body {
 	margin: 20px 0 4px;
 }
 
+.colabo {
+	margin-top:0;
+}
+
 .clearfix {
 	clear: both;
 }
@@ -107,13 +111,45 @@ body {
 	text-decoration: none;
 }
 
+.footer span {
+	color: #545454;
+	text-decoration: none;
+	font-weight: bold;	
+}
+
+#totop {
+	position: fixed;
+	cursor: pointer;
+	bottom: 40px;
+	right: 40px;
+	background-color: steelblue;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	padding: 15px 0;
+	border-radius: 25px;
+	text-decoration: none;
+	color: lightblue;	
+	font-weight: bold;
+	border: 1px solid steelblue;
+}
+
+[class*="new"] .product-name::before {
+	content: "new";
+	background-color: red;
+	color: white;
+	border-radius: 10px;
+	padding: 2px 5px;
+}
+
+
 
 </style>
 
 </head>
 <body>
 
-<div class="navbar">
+<div class="navbar" id="top">
 	<a href="#" id="logo">02knit</a>
 	<ul id="menu">
 		<li><a href="#">contact</a></li>
@@ -129,7 +165,7 @@ body {
 <div class="products">
 	<h3>our new product</h3>
 
-	<div class="product-list">
+	<div class="product-list-new">
 		<a href="#" class="product">
 			<img alt="소요가디건" src="images/soyo.jpg" width="225">
 			<div class="product-name">
@@ -185,7 +221,7 @@ body {
 	</div>
 	<div class="clearfix"></div>
 	
-	<div class="colabo">Colaboration With. Shayla</div>
+	<div class="colabo">With. @Shalya_knitaddict</div>
 	
 	<div class="product-list">	
 		<a href="#" class="product">
@@ -220,18 +256,23 @@ body {
 </div>
 
 <div class="footer">
-	<a href="https://www.youtube.com/@02knit58" target="_blank">
+	<a href="https://www.youtube.com/" target="_blank">
 		<img alt="유튜브" src="images/youtube.png" height="20">
+		<span>02knit 유튜브</span>
 	</a>
 
 	<a href="https://www.kakaotalk.com" target="_blank">
 		<img alt="카카오톡" src="images/kakaotalk.png" height="20">
+		<span>02knit 오픈채팅</span>
 	</a>
 
-	<a href="https://instagram.com/dof._.rfun?igshid=NDk5N2NlZjQ=" target="_blank">
+	<a href="https://instagram.com/" target="_blank">
 		<img alt="인스타" src="images/instagram.png" height="20">
+		<span>02knit 인스타그램</span>
 	</a>
 </div>
+
+<a href="#top" id="totop" >[TOP]</a>
 
 
 
