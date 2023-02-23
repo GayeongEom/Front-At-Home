@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+.nav {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.nav > li {
+	float: left;
+	background-color: steelblue;
+	line-height: 40px;
+	border-right: 1px solid white;
+	position: relative;
+}
+
+.nav > li > a {
+	display: inline-block;
+	width: 135px;
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 25px;
+	text-align: center;
+
+	/* 인라인에서 여백을 키우는 것과 블록에서 여백을 키우는 것은 클릭 가능한 영역의 차이 */
+	padding: 5px 15px;
+	margin: 0 5px;
+	
+	transition: color 0.2s;
+}
+
+.nav > li > a:hover {
+	color: lightblue;
+	
+	transition: color 0.5s;
+}
+
+/* ----------------------------------------------------------- */
+
+/* 서브메뉴 */
+.nav > li > ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	position: absolute;
+}
+
+.nav > li > ul > li {
+	
+	background-color: lightblue;
+	text-align: center;
+	
+	height: 0;
+	overflow: hidden;
+	font-size: 0;
+}
+
+.nav > li:hover > ul > li {
+	height: 40px;
+	font-size: 20px;
+	line-height: 2em;
+	
+	transition: all 0.5s;
+}
+
+.nav > li > ul > li > a {
+	text-decoration: none;
+	color: white;
+	background-color: lightblue;
+	
+	display: block;
+	
+	transition: color 0.3s;
+}
+
+.nav > li > ul > li:hover > a {
+	color: lightblue;
+	background-color: #f5feff;
+	
+	transiton: color 0.5s;
+}
+
+</style>
+
+</head>
+<body>
+<ul class="nav">
+	<li>
+		<a href="">Home</a>
+	</li>
+	<li>
+		<a href="">웹 개발팀</a> 
+	
+		<ul>
+			<li>
+				<a href="">웹 디자이너</a> 
+			</li>
+			<li>
+				<a href="">웹 퍼블리셔</a> 
+			</li>
+			<li>
+				<a href="">웹 개발자</a> 
+			</li>
+			<li>
+				<a href="">웹 엔지니어</a> 
+			</li>
+		</ul>
+	</li>
+	<li>
+		<a href="">게시판</a> 
+			
+		<ul>
+			<li>
+				<a href="">공지사항</a> 
+			</li>
+			<li>
+				<a href="">자유게시판</a> 
+			</li>
+		</ul>
+	</li>
+	<li>
+		<a href="">문의하기</a> 
+	</li>
+</ul>
+
+</body>
+</html>
