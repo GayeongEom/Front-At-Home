@@ -13,7 +13,7 @@ fieldset {
 }
 
 label {
-	display: inline-block;
+ 	display: inline-block; 
 	width: 80px;
 	text-align: center;
 	font-weight: bold;
@@ -27,9 +27,18 @@ div {
 	margin: 5px;
 }
 
+
 #content {
 	height: 180px;
+	width: 202px;
+	resize: none;
 }
+
+.content * {
+	vertical-align: middle;
+}
+
+
 
 #btn {
 	text-align: center;
@@ -90,19 +99,19 @@ table input {
 <fieldset>
 	<legend>공지사항 작성하기</legend>
 	
-	<div>
+	<div class="title">
 		<label for="title">제목</label>
-		<input type="text" name="title" id="title" placeholder="제목을 입력하시오.">
+		<input type="text" name="title" id="title" placeholder="제목을 입력하시오." required>
 	</div>
 	
-	<div>
+	<div class="content">
 		<label for="content">내용</label>
-		<input type="text" name="content" id="content" placeholder="내용을 입력하시오.">
+		<textarea rows="30" cols="26" name="content" id="content" placeholder="내용을 입력하시오." required></textarea>
 	</div>
 	
 	<div>
 		<label for="uploadfile">첨부파일</label>
-		<input type="file" value="파일 선택">
+		<input type="file" value="파일 선택" name="uploadfile">
 	</div>
 	
 	<div id="btn">

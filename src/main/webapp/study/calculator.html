@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>계산기</title>
+
+<style type="text/css">
+
+@font-face {
+	font-family: 'retro';
+	src: url('../resources/font/DungGeunMo.ttf') format('truetype');
+}
+
+
+/* 기본 스타일링 제거 */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'retro';
+}
+
+/* 배경 틀 잡기 */
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+/* 	border: 1px solid red; */
+	width: 100vw;
+	height: 100vh;
+	
+	background-color: #D8E6E7;
+}
+
+/* 계산기 틀 잡기 */
+.calculator {
+	display: flex;
+/* 	border: 1px solid red; */
+	width: 350px;
+	height: 500px;
+	flex-direction: column;
+	border-radius: 10px;
+	padding: 25px;
+	
+	border: 2px solid #C5C6B6;
+	background-color: #fbfbf4;
+	box-shadow: 5px 5px 20px #8c9184;
+}
+
+/* 계산기 입력화면 */
+.display {
+	display: flex;
+/* 	border: 1px solid green; */
+	border-radius: 10px;
+	margin-bottom: 20px;
+	flex: 10%;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 3%;
+	
+	border: 2px solid #C5C6B6;
+	box-shadow: 1px 1px 5px #8c9184 inset;
+	font-size: 2rem;
+	background-color: #9DC3C1;
+}
+
+/* 컨트롤러 틀 */
+.controller {
+	display: flex;
+	flex: 70%;
+/* 	border: 1px solid green; */
+	padding: 3%;
+	border-radius: 10px;
+	flex-direction: column;
+	
+	border: 2px solid #C5C6B6;
+	background-color: #fffff1;
+}
+
+/* 버튼 틀 잡기 */
+.buttons {
+	display: flex;
+/* 	border: 1px solid blue; */
+	flex: auto;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+/* 버튼 */
+button {
+/* 	border: 1px solid purple; */
+	width: 52px;
+	height: 52px;
+	border-radius: 50px;
+	margin: 2%;
+	
+	font-size: 1.5rem;
+	box-shadow: 2px 4px 0 #8c9184;
+	color: black;
+	border: 2px solid #3E4348;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+#zero {
+	width: 120px;
+}
+
+/* 버튼 색상 */
+.number {
+	background-color: #d5e6e7;
+}
+
+.function {
+	background-color: #6E7783;
+}
+
+.key {
+	background-color: #548687;
+}
+
+/* 버튼 눌림 효과 */
+.number:active {
+	background-color: #3b5152;
+	color: white;
+}
+
+.function:active {
+	background-color: #32353a;
+	color: white;
+}
+
+.key:active {
+	background-color: #425050;
+	color: white;
+}
+
+</style>
+
+</head>
+<body>
+<div class="container">
+	<div class="calculator">
+		<div class="display">0</div>
+		<div class="controller">
+			<div class="buttons">
+				<button class="function">a</button>
+				<button class="function">ac</button>
+				<button class="function">%</button>
+				<button class="key">/</button>
+			</div>
+			<div class="buttons">
+				<button class="number">7</button>
+				<button class="number">8</button>
+				<button class="number">9</button>
+				<button class="key">*</button>
+			</div>
+			<div class="buttons">
+				<button class="number">4</button>
+				<button class="number">5</button>
+				<button class="number">6</button>
+				<button class="key">-</button>
+			</div>
+			<div class="buttons">
+				<button class="number">1</button>
+				<button class="number">2</button>
+				<button class="number">3</button>
+				<button class="key">+</button>
+			</div>
+			<div class="buttons">
+				<button class="number" id="zero">0</button>
+				<button class="number">.</button>
+				<button class="key">=</button>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>
