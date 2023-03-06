@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+//변수 선언
+var data;
+console.log(data)	//undefined이라는 타입이라는걸 보여줌 -> 에러 아님
+
+//에러, 선언되지 않은 변수(식별자)
+// console.log(num)	//선언된 적이 없어서 에러로 뜸
+
+//null : 참조대상이 없음
+var obj = null;
+console.log(obj)
+
+console.log("--------------")
+//JS는 유연하므로 명확하게 구분하려하면 안됨 / null과 undefined가 비슷하게 다뤄지기도 함
+
+console.log(typeof data)
+console.log(typeof obj)
+
+console.log("--------------")
+if( data == undefined ) {
+	console.log("변수가 초기화되지 않음")	
+	console.log("자료형도 결정되지 않은 상태")	
+}
+
+console.log("--------------")
+
+if( data==null ) {
+	console.log("참조대상이 없는 상태")	
+}
+
+console.log("--------------")
+//Abstract Equality Comparison, 추상 동등 비교
+//	== 연산자
+
+if(undefined==null) {
+	console.log(undefined==null)
+}
+
+console.log("--------------")
+//Strict Equality Comparison, 강력(엄격) 동등 비교
+//	=== 연산자
+
+if(undefined===null) {
+	console.log("===", undefined===null)
+} else {
+	console.log("!==", undefined !== null)
+}
+
+console.log("--------------")
+
+if(!data) {
+	console.log("!data", !undefined)
+}
+
+console.log("--------------")
+
+if(undefined==false){	//출력되지 않음
+	console.log("undefined==false")	
+} else {	//출력됨
+	console.log("undefined != false")
+}
+
+console.log("--------------")
+
+//조건식으로 사용되었을 때 false취급되는 대표 데이터들
+console.log("!undefined", !undefined)
+console.log("!null", !null)
+
+console.log("!false", !false)
+console.log("!0", !0)
+console.lod('!""', !"")
+
+console.log("!NaN", !NaN)
+
+</script>
+
+</head>
+<body>
+
+
+</body>
+</html>

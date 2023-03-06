@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+function hello() {
+	console.log("안녕하세요")
+}
+
+function thanks() {
+	console.log("감사합니다")
+}
+
+//---------------------------------------------
+
+//매개변수로 함수를 전달받기
+function action(fn) {
+	fn();
+	
+	return fn
+}
+
+//에러, 전달한 number데이터를 함수 호출코드로 사용
+// action(123)
+
+//---------------------------------------------
+//함수를 전달인자로 전달하여 action함수에서 호출되도록 만들기
+action(hello)
+
+action(thanks)
+
+//---------------------------------------------
+
+//전달인자로 익명함수 전달하기
+action(function() {
+	console.log("익명함수 전달")
+})
+
+console.log("-----------------")
+
+//action함수의 전달인자로 hello함수를 전달
+//action함수 안에서 hello함수가 호출됨
+//hello함수를 리턴하고 f변수에 대입
+var f = action( hello )
+f();
+
+console.log("-----------------")
+
+action(thanks)()
+
+console.log("-----------------")
+
+action(action(action(action(thanks))))()
+
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

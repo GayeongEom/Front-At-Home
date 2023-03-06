@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+//함수, function
+
+//JS 함수 정의
+function func() {
+	
+	//수행코드
+	console.log("함수입니다.")
+}
+
+//JS 함수 호출
+func()
+func()
+func()
+
+// **반환 데이터 타입은 적지 않음
+// **반환코드(return)는 사용
+
+// **매개변수는 ()괄호 안에 작성
+
+console.log("------------")
+// 변수선언
+var func2;
+console.log(func2, typeof func2)
+
+// 함수의 이름을 정하지 않고 정의하면 익명함수(Anonymous Function)이라고 함
+func2 = function() {	//함수의 이름을 주지 않고 변수에 함수를 대입해서 사용
+	console.log("이것도 함수입니다.")
+}
+
+console.log(func2, typeof func2)
+
+func2()
+func2()
+func2()
+
+console.log("------------")
+
+var func3 = func
+var func4 = func2
+
+func3();
+func4();
+
+console.log("------------")
+
+//	얘네는 참조형! 
+console.log(typeof func)
+console.log(typeof func2)
+console.log(typeof func3)
+console.log(typeof func4)
+
+
+
+
+
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

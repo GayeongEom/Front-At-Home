@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+//문자 -> 숫자
+console.log(parseInt('123'))
+console.log(parseInt('456ABC'))
+console.log(parseInt('DEF789'))
+console.log(parseInt('111GHI222'))
+
+console.log("------------")
+
+console.log(parseInt("123.456"))	//소수점 이하 버림
+console.log(parseFloat("456.789"))	//456.789
+
+console.log(parseFloat("876"))	//876
+
+console.log("------------")
+
+console.log(Number("123.456"))
+console.log(Number("789"))
+
+console.log("------------")
+//숫자 -> 문자
+//	상수에는 .toString()함수를 적용할 수 없음
+// console.log(456.toString())
+
+var n1 = 567.89;
+console.log(n1.toString())	//10진수 형식의 문자
+
+console.log(n1.toString(2))
+console.log(n1.toString(8))
+console.log(n1.toString(16))
+
+console.log("------------")
+
+var n2 = 3456.7891
+console.log(n2.toFixed())	//소수점 0자리 / 반올림해서 보여줌
+console.log(n2.toFixed(1))	//소수점 1자리
+console.log(n2.toFixed(8))	//소수점 8자리 -> 0으로 채워서라도 8자리로 맞춰서 보여줌
+
+console.log("------------")
+
+console.log(String(1234))
+console.log(String(1234.5678))
+
+
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

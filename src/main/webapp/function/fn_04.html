@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+//변수의 스코프, Scope : 변수가 인식되고 사용할 수 있는 범위
+//	변수의 유효범위
+
+//-------------------------------------------------------------
+
+//에러, 선언되지 않은 변수(식별자)를 사용함
+// console.log(data)
+
+//-------------------------------------------------------------
+
+//에러나지 않음 -> 변수 선언 이전에 변수를 사용
+console.log("선언 전", num)	//undefined
+
+var num = 10	//실행은 동적 / 선언, 정의는 정적으로 공간을 만들어 둠 -> 코드를 읽기 전에 num이라는 변수의 공간을 만들어놨기 때문에 실행시 위에서부터 코드를 읽으면서 num이라는 공간은 있지만 선언되지 않았다고 인식
+
+console.log("선언 후", num)
+
+//	**JS 엔진은 자바스크립트 코드를 실행하기 전에 정적인 시점을 활용하여 선언된 변수를 미리 전부 생성해놓음
+//		단, 초기화(대입)는 진행하지 않음 -> undefined 상태
+
+//	**선언코드가 있는 변수는 선언코드 이전에 접근 가능
+
+//	** 호이스팅(Hoisting)현상
+//		선언된 변수들을 자바스크립트 코드 처음부터 접근할 수 있도록 만드는 현상
+
+//-------------------------------------------------------------
+
+//전역 변수, Global Variable
+//	Global Scope(전역 스코프)에 선언된 변수
+//	<script>태그에 곧바로 선언된 변수
+var global_var = 1234;
+
+//-------------------------------------------------------------
+
+//에러, 함수 스코프를 벗어나서 함수 지역변수 사용 불가
+// console.log("func_var", func_var)
+
+function func() {
+	//함수 지역 스코프, Function local scope
+	//----------------------------------------
+	
+	//함수 스코프에서 전역 스코프의 변수 사용 가능
+	console.log("global_var", global_var)
+
+	//----------------------------------------
+	
+	//함수 스코프 안에서 호이스팅
+	console.log("func_var", func_var)	//호이스팅
+
+	//함수 지역 변수
+	var func_var = 5678
+	console.log("func_var", func_var)
+
+
+}	//함수지역 스코프는 이 중괄호가 끝나면 끝
+
+//에러, 함수 스코프를 벗어나서 함수 지역변수 사용 불가
+// console.log("func_var", func_var)
+
+//함수 호출
+func();
+
+console.log("-----------------")
+
+//{}중괄호 블록
+//	블록 지역 스코프, Block local scope
+	console.log("block_var", block_var)
+{
+	var block_var = 9999;
+	console.log("block_var", block_var)
+}
+	console.log("block_var", block_var)
+
+//var 변수는 function스코프에만 적용됨 -> block 스코프는 무시
+
+//제어문의 블록 지역 스코프
+for(var i=0; i<5; i++) {
+	
+}	//-> i가 5까지 증가하고 for문을 나옴 / 현재 i값은 5 / var 변수는 block스코프를 무시하므로 블록 밖에서도 사용 가능
+
+console.log("i", i)
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

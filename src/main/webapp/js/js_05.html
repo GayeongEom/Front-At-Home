@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+//NaN, Not a Number
+console.log(NaN)
+console.log(typeof NaN)	//number
+
+console.log(567 + NaN)	//NaN
+
+console.log("------------")
+//parseInt() 내장함수
+//	매개변수의 문자를 숫자로 변환(치환)하는 함수
+console.log(parseInt("123"))	//"123" -> 123
+console.log(parseInt("678QWER"))	// 숫자부분만 추출해서 보여줌
+
+console.log(parseInt("ABC999"))	// NaN / 시작이 문자면 숫자를 인식하지 못함
+
+console.log("------------")
+//isNaN() 내장함수
+//	전달인자가 NaN인지 확인하는 함수
+//	숫자형식이면 false, 숫자형식이 아니면 true
+
+console.log(isNaN(123))	// false -> number형식
+console.log(isNaN("Apple"))	//true -> NaN형식
+
+console.log(isNaN("888"))	// false -> 자동형변환
+console.log(isNaN("999Test"))	//true -> NaN
+
+console.log("------------")
+//Infinity, 무한대
+console.log(Infinity)
+
+console.log(+Infinity)
+console.log(-Infinity)
+
+console.log(123/0)	//Infinuty
+console.log(-888/0)	//-Infinity
+
+//isFinite() 내장함수
+//	매개변수가 Infinity인지 검사
+console.log(isFinite(555))
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

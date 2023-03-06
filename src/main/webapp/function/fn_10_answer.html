@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+//현재 시간 객체
+var now = new Date();
+
+//console.log(now)
+console.log(now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds())
+
+//---------------------------------------------------------------
+
+//현재시간 출력 함수
+function showTime() {
+	var now = new Date();
+	console.log(now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds())
+}
+
+showTime();
+
+//---------------------------------------------------------------
+
+//시분초가 한 자리일 때 앞에 0 붙이기
+function showTime() {
+	var now = new Date();
+	
+	var h = now.getHours()
+	var m = now.getMinutes()
+	var s = now.getSeconds()
+
+	if(h<10) {	h = "0" + h}
+	if(m<10) {	m = "0" + m}
+	if(s<10) {	s = "0" + s}
+	
+	console.log(h + ":" + m + ":" + s)
+}
+
+showTime();
+
+//---------------------------------------------------------------
+
+//"문자열".slice(-2) : 문자열의 뒷부분부터 2자리의 글자를 추출
+function showTime2() {
+	var now = new Date();
+	
+	var h = ('0' + now.getHours()).slice(-2)
+	var m = ('0' + now.getMinutes()).slice(-2)
+	var s = ('0' + now.getSeconds()).slice(-2)
+	
+	console.log(h + ":" + m + ":" + s)
+}
+
+showTime2()
+
+//---------------------------------------------------------------
+
+//1초마다 showTime() 호출하기
+setInterval(showTime, 1000 )
+
+//1초마다 showTime2() 호출하기
+setInterval(showTime2, 1000 )
+
+//---------------------------------------------------------------
+
+//익명함수 버전
+setInterval(function() {
+	var now = new Date();
+	
+	var h = now.getHours()
+	var m = now.getMinutes()
+	var s = now.getSeconds()
+
+	if(h<10) {	h = "0" + h}
+	if(m<10) {	m = "0" + m}
+	if(s<10) {	s = "0" + s}
+	
+	console.log(h + ":" + m + ":" + s)
+	
+}, 1000)
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

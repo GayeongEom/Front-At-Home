@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+//Date 객체 : 날짜 시간 객체
+//date 객체도 생성자가 있어서 생성자마다 호출값이 달라짐
+//----------------------------------------------------
+
+//Date객체의 생성자 종류 1.
+// new Date() : 현재 날짜 시간을 가진 객체가 생성됨
+
+var d1 = new Date();
+console.log(d1)
+
+//----------------------------------------------------
+
+//Date객체의 생성자 종류 2.
+//	new Date(밀리초) : 밀리초 매개변수를 사용하여 Epoch Time을 지정
+
+//	**Epoch Time, 에포크 타임, 유닉스 타임
+//		1970/01/01 00:00:00.000 GMT 기준으로 흘러간 시간
+
+//	ex) 에포크 타임 계산
+//		1d == 1*24h == 1*24*60m == 1*24*60*60s == 1*24*60*60*1000ms
+
+var d2 = new Date(1*24*60*60*1000) //하루
+console.log(d2)
+
+var d3 = new Date(53*365*24*60*60*1000)	//약 53년
+console.log(d3)
+
+//----------------------------------------------------
+
+//Date객체의 생성자 종류 3.
+//	new Date("yyyy//mm//dd hh24:mi:ss")
+
+var d4 = new Date("2023/02/09 17:51:37")
+console.log(d4)
+
+//----------------------------------------------------
+
+//Date객체의 생성자 종류 4.
+//	new Date(year, mm, dd, hh24, mi, ss)
+//	**각 전달인자는 number 타입
+//	**월은 0부터 시작해서 1월로 판단
+var d5 = new Date(2022, 11, 23, 16, 21, 33)
+console.log(d5)
+
+//----------------------------------------------------
+//Date.now() 메소드 : 현재 시간까지 흘러간 에포크타임을 밀리초로 반환
+//	->정적 메소드
+
+console.log(Date.now())
+
+var d6 = new Date(Date.now())
+console.log(d6)
+
+//----------------------------------------------------
+//Date 객체에서 날짜 또는 시간 항목을 추출하는 메소드
+var d = new Date()	//현재시간
+
+console.log(d.getFullYear())	//년도
+console.log(d.getMonth())		//월 (0부터 1월로 시작)
+console.log(d.getDate())		//일
+
+console.log(d.getDay())			//요일 (0부터 일요일로 시작)
+
+console.log(d.getHours())		//시
+console.log(d.getMinutes())		//분
+console.log(d.getSeconds())		//초
+
+console.log(d.getMilliseconds())//밀리초
+
+console.log("----------------")
+
+//get 대신 set을 사용하는 함수를 이용하여 Date객체의 날짜/시간을 지정(변경)할 수 있음
+
+d.setFullYear(2133)
+d.setMonth(6)
+d.setDate(21)
+
+console.log(d)
+
+console.log("----------------")
+
+//Date객체.setTime(밀리초)
+//	->객체시간을 Epoch Time을 이용하여 변경
+d.setTime(1600000000000)	//1조 6천억 밀리초
+console.log(d)
+
+//모질라 내장함수 참고~
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

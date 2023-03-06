@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+//전역변수
+var data = 123;
+console.log(data)
+
+//전역변수는 window객체에 property로 등록됨
+console.log(window.data)
+
+//-----------------------------------------------------------------
+
+function func() {
+	console.log('test')
+}
+
+//함수도 window객체에 property로 등록됨
+window.func()
+
+//-----------------------------------------------------------------
+
+//** window객체에는 각종 내장함수들이 등록되어있음
+
+//window.open() 함수 : 팝업창을 띄우는 함수
+//	open(url, target, feature)
+
+//		url : 오픈될 url경로를 지정 / 빈 문자열이면 빈 새창을 오픈
+
+//		target : 페이지가 열릴 위치의 이름을 지정 / 주로 <a>의 target에 들어갈 값과 같이 키워드로 지정
+//				-> _blank : 새탭 / _self : 현재 탭
+
+//		feature : 페이지가 열릴 때 필요한 동작 옵션을 지정
+//				-> popup, popup=yes, popup=1, popup=true : 페이지를 팝업창으로 염
+
+//		width, height : 너비, 높이를 숫자로 지정
+
+//		left or screenX / top or screenY : 팝업창의 위치를 지정
+
+open("https://www.naver.com", "네이버", "popup=yes, width=600, height=400, left=200, top=200")
+
+//-----------------------------------------------------------------
+
+//window.close() 함수 : 윈도우(창)을 닫음 / 브라우저에 따라 기본탭이 닫히지 않을 수도 있음 -> 팝업된 창은 잘 닫힘
+
+//-----------------------------------------------------------------
+
+console.log("---- navigator ----")
+// console.log(window.navigator)
+console.log(navigator)
+
+//브라우저 + 운영체제의 정보 속성
+console.log(navigator.userAgent)
+
+//언어권(Locale) 정보
+console.log(navigator.language)
+
+//브라우저 벤더사, 배포 회사
+console.log(navigator.vendor)
+
+//-----------------------------------------------------------------
+
+console.log("---- location ----")
+console.log(location)
+
+console.log("프로토콜", location.protocol)
+console.log("도메인 주소", location.host)
+console.log("호스트 네임", location.hostname)
+console.log("포트", location.port)
+console.log("자원 경로", location.pathname)
+
+//전체 URL 정보
+console.log(location.href)
+
+//자바스크립트로 페이지를 이동시키는 코드
+// location.href = "https://www.naver.com"
+// location.href = "/tag/tag_06.html"
+
+//-----------------------------------------------------------------
+
+console.log("---- history ----")
+console.log(history)
+
+//이전 방문 페이지로 이동
+//history.back()	-> 활용도가 좀 더 높음
+
+//다음 방문 페이지로 이동
+// history.forward()
+
+//-----------------------------------------------------------------
+
+//history.go(n) 함수 : 히스토리 페이지를 이동할 개수를 n으로 지정
+//	0이면 현재, 음수면 이전, 양수면 다음 페이지
+// history.go(-1) == history.back()
+
+//-----------------------------------------------------------------
+
+console.log("---- screen ----")
+console.log(screen)	//꽤나 많이 쓰임
+
+//브라우저를 최대화했을 때 차지하는 영역의 크기 -> 작업표시줄(시작메뉴줄) 높이 40px이 제외됨
+//	픽셀값으로 수치가 나옴
+console.log(screen.availWidth)
+console.log(screen.availHeight)
+
+console.log("--------------")
+
+//모니터 해상도 크기 -> 작업표시줄 크기를 무시
+console.log(screen.width)
+console.log(screen.height)
+
+console.log("--------------")
+
+//브라우저의 외곽 크기
+console.log(window.outerWidth)
+console.log(window.outerHeight)
+
+console.log("--------------")
+
+//브라우저의 내부 크기
+//	<body>태그가 보여지는 곳의 크기 -> 메뉴, 탭, 북마크, 스크롤, 외곽선 등을 제외한 크기
+console.log(window.innerWidth)
+console.log(window.innerHeight)
+
+console.log("--------------")
+
+//브라우저 창의 위치 -> 브라우저 좌측 상단 지점을 기준으로 함
+console.log(window.screenX)
+console.log(window.screenY)
+
+console.log("--------------")
+
+//브라우저 창의 위치 -> 브라우저 좌측 상단 지점을 기준으로 함
+//	**IE 9 이전 버전에서 사용하는 속성 / 다른 브라우저에서도 거의 사용 가능
+console.log(window.screenLeft)
+console.log(window.screenRight)
+
+</script>
+
+</head>
+<body>
+
+
+<button id="openPopup">팝업 열기</button>
+<button id="closePopup">팝업 닫기</button>
+
+<script type="text/javascript">
+
+var wid
+
+openPopup.onclick = function() {
+	wid = open("https://www.naver.com", "네이버", "popup, width=200, height=200, left=200" )
+}
+
+closePopup.onclick = function() {
+	wid.close()
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+function hello() {
+	console.log('hello')
+}
+
+hello()
+
+//------------------------------------------------------------
+
+//내장함수
+//1000밀리초마다 hello 함수 호출하기
+var tid = setInterval( hello, 1000 ) //밀리초 단위 매개변수
+
+//timerid 출력
+console.log(tid)
+
+//------------------------------------------------------------
+
+//3000밀리초 이후에 익명함수 호출하도록 설정하기
+//timerid가 있지만 자기 할일 다 한 후에 갹체가 사라지므로 timerid도 사라짐
+setTimeout(function(){
+	alert('HIHI')
+}, 3000)
+
+//------------------------------------------------------------
+
+//tid가 1초 뒤에 실행되기도 전에 끝내버림
+// clearInterval( tid )
+
+setTimeout(function() {
+	clearInterval(tid)
+}, 6500)
+
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

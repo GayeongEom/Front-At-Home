@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+//Quiz. 현재 시 분 초를 1초마다 출력하기
+//	console 출력 / 시:분:초 형태로 출력
+
+
+function nowtime() {
+
+	var d = new Date();
+	
+	hour = d.getHours()
+	minute = d.getMinutes()
+	second = d.getSeconds()
+
+	time = hour + ":" + minute + ":" + second
+	
+	console.log(time)
+
+}
+
+var tm = setInterval(nowtime, 1000)
+
+console.log(tm)
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>
