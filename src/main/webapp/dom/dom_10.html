@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+window.onload = function() {
+	
+	//h1 태그 선택자
+	var h1 = document.querySelector("h1")	// -> DOM 객체
+	console.log(h1)
+	
+	//h1 태그 선택자
+	var h2 = document.querySelectorAll("h1")	// -> 배열
+	console.log(h2)
+	
+	//---------------------------------------------------------
+	
+	//p태그 선택자
+	var p = document.querySelector("p")
+	console.log(p)
+
+	//p태그 선택자
+	var p_arr = document.querySelectorAll("p")
+	console.log(p_arr)
+
+	//---------------------------------------------------------
+
+	//클래스 선택자
+	var second = document.querySelector(".second")
+	console.log(second)
+	
+	//---------------------------------------------------------
+
+	//아이디 선택자
+	var test = document.querySelector("p#test")
+	console.log(test)
+
+	//---------------------------------------------------------
+
+	//p#test 제거하기
+	test.remove()
+	
+	//화면에서 요소가 없어짐 -> 변수에는 저장되어있음
+	console.log(test)
+
+	//---------------------------------------------------------
+
+	//<body>태그의 자식노드 "span" 노트 객체 제거
+	document.body.removeChild(document.querySelector("span"))
+
+}
+
+</script>
+
+</head>
+<body>
+
+<h1>선택자를 이용한 DOM 객체 얻기</h1>
+<hr>
+
+<p>첫번째</p>
+<p class="second">두번째</p>
+<span>세번쨰</span>
+<div>네번째</div>
+<p id="test">다섯번째</p>
+
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- QUIZ. -->
+<!-- div#content안에 innerHTML을 이용하여 추가하기 -->
+
+<!-- ul 목록 -->
+<!--    JavaScript -->
+<!--    DOM -->
+<!--    innerHTML -->
+
+<script type="text/javascript">
+window.onload = function() {
+	
+	
+	var ul = ""
+	
+	ul += "<ul>"
+	ul += "	<li>JavaScript</li>"
+	ul += "	<li>DOM</li>"
+	ul += "	<li>innerHTML</li>"
+	ul += "</ul>"
+	
+	console.log(ul)
+
+	//이건 <body>태그에 추가한 것이라 오답
+	document.body.innerHTML += ul
+	
+	//div#content에 추가하기 위해서는 content 노드를 찾아야 함
+	var content = document.getElementById("content")
+	
+	content.innerHTML = ul
+	
+	//-----------------------------------------------
+	
+// 	var content = document.getElementById("content")
+	
+	console.log(content)
+	
+	content.innerHTML += "<ul>"
+	content.innerHTML += "	<li>JavaScript</li>"
+	content.innerHTML += "	<li>DOM</li>"
+	content.innerHTML += "	<li>innerHTML</li>"
+	content.innerHTML += "</ul>"
+}
+
+</script>
+
+
+</head>
+<body>
+
+<div id="content"></div>
+
+</body>
+</html>

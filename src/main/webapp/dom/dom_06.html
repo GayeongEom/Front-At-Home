@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+.content {
+	border: 1px solid black;
+}
+
+.content[data-type~='text'] {
+	color: red;
+}
+
+.content[data-type~='number'] {
+	color: blue;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<!-- 굉장히 안좋은 방법 / 그루핑은 하지만 CSS를 고려하지 않았음 -->
+<!-- class 속성값으로 CSS적용 목적이 아닌 값을 사용하지 않는 것이 좋음 -->
+<h1 class="content index1 text">첫번째</h1>
+<h1 class="content index2 number">22222222</h1>
+<h1 class="content index3 text">세번째</h1>
+<h1 class="content index4 number">444444444</h1>
+
+<hr>
+
+<!-- 사용자 정의 속성 -> HTML 속성 -->
+<!-- 	HTML태그의 속성을 사용자가 만들어서 사용할 수 있다 -->
+<!-- 	"data-"로 시작하는 속성 이름으로 적용  -->
+<!-- 	** 표준 속성으로 인정받음 -->
+
+<h1 class="content" data-index="1" data-type="text">첫번째</h1>
+<h1 class="content" data-index="2" data-type="number">22222222</h1>
+<h1 class="content" data-index="3" data-type="text">세번째</h1>
+<h1 class="content" data-index="4" data-type="number">444444444</h1>
+
+</body>
+</html>

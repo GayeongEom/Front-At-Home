@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- QUIZ. -->
+<!-- div#content안에 innerHTML을 이용하여 추가하기 -->
+
+<!-- ul 목록 -->
+<!--    JavaScript -->
+<!--    DOM -->
+<!--    innerHTML -->
+
+<script type="text/javascript">
+
+window.onload = function() {
+	
+	var content = document.getElementById("content")
+	
+	console.log(content)
+	
+	var ul = ""
+	
+	ul += "<ul>"
+	ul += "	<li>JavaScript</li>"
+	ul += "	<li>DOM</li>"
+	ul += "	<li>innerHTML</li>"
+	ul += "</ul>"	
+	
+	console.log(ul)
+	
+	content.innerHTML = ul
+	
+	//---------------------------------------------
+	
+	content.innerHTML += "<hr>"
+	
+	content.innerHTML += "<ul>"
+	content.innerHTML += "	<li>JavaScript</li>"
+	content.innerHTML += "	<li>DOM</li>"
+	content.innerHTML += "	<li>innerHTML</li>"
+	content.innerHTML += "</ul>"
+	
+	console.log(content.innerHTML)
+}
+
+</script>
+
+
+
+
+</head>
+<body>
+
+<div id="content"></div>
+
+</body>
+</html>

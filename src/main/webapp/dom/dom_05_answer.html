@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+window.onload = function() {
+	
+	//div#content 노드 찾기
+	var content = document.getElementById("content1")
+	
+	//추가될 html 코드 작성
+	var h = ''
+	h += "<ul>"
+	h += "	<li>JavaScript</li>"
+	h += "	<li>DOM</li>"
+	h += "	<li>innerHTML</li>"
+	h += "</ul>"
+	
+	//div#content의 innerHTML 추가하기
+	content.innerHTML = h
+	
+	//------------------------------------------------------------------
+	
+	var content2 = document.getElementById("content2")
+	
+	content2.innerHTML = "<ul id='u'></ul>"
+	
+	var u = document.getElementById("u")
+	
+// 	u.innerHTML = "<li>JavaScript</li>"
+// 	u.innerHTML += "<li>DOM</li>"
+// 	u.innerHTML += "<li>innerHTML</li>"
+
+	h = "	<li>JavaScript</li>"
+	h += "	<li>DOM</li>"
+	h += "	<li>innerHTML</li>"
+
+	document.getElementById("u").innerHTML = h
+	
+	//appendChild()는 DOM객체(Object)를 innerHTML은 텍스트를
+	//	-> createElement를 해서 작성한건 append를 통해 넣어줘야함
+	
+}
+
+</script>
+
+</head>
+<body>
+
+<div id="content1"></div>
+<div id="content2"></div>
+
+</body>
+</html>

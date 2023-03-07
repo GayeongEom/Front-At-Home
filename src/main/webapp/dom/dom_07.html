@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+window.onload = function() {
+	
+	var data1 = document.getElementsByName("data1")
+	console.log(data1)
+	
+	var data2 = document.getElementsByName("data2")
+	console.log(data2)
+
+	//---------------------------------------------------------
+	
+// 	data1.value = "첫번째 입력 폼 필드"
+
+	//** getElements~로 시작하는 API들은 배열 형태로 반환됨
+	//	-> 얻어온 노드가 1개여도 배열에 담겨져 있음!
+	data1[0].value = "첫번째!"
+
+	//---------------------------------------------------------
+
+	var hobbies = document.getElementsByName("hobby")
+	console.log(hobbies)
+	
+	//체크된 상태로 변경
+	hobbies[0].checked = "checked"	// -> html로 들어가진 않음
+	hobbies[1].checked = true
+
+	console.log(hobbies[0].checked)
+	console.log(hobbies[1].checked)
+
+}
+
+</script>
+
+</head>
+<body>
+
+<h1>name 속성값 테스트</h1>
+
+<form action="" method="get">
+
+	<input type="text" name="data1"><br>
+	<input type="text" name="data2"><br><br>
+	
+	<label>영화보기<input type="checkbox" name="hobby"></label>
+	<label>음악감상<input type="checkbox" name="hobby"></label>
+
+</form>
+
+</body>
+</html>

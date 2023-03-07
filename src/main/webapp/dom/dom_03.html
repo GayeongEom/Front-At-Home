@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+window.onload = function() {
+	
+	//<img>태그 요소 노드 생성 -> 참조형으로 만들어짐 / 밑에서 만들어진 속성도 참조값으로 동작하므로 append하지 않아도 콘솔창에는 보임
+	var img = document.createElement("img")		//현재 크리에이트 할 때는 속성이 없음
+	console.log( img )
+	
+	//--------------------------------------------------------------------------
+	
+	//<img>태그의 표준 속성
+	//	src, alt, width, height, ...
+	//	id, class, style, title, ...
+	
+	//** 표준속성(Attribute)는 DOM 객체의 속성(Property)로 사용할 수 있음
+	
+	img.src = '../resources/image/cat.jpg'
+	img.alt = '또또'
+	//화면에는 아직 appendChild를 하지 않아서 안보임
+	
+	//HTML Attribute라서 px를 안적어도 됨 / style로 타고 들어가면 css가 되므로 px 붙여줘야함
+	img.width = '400'
+	img.height = '600'
+	
+	//<body>태그에 img 객체 추가하기 -> 화면에 보여짐
+	document.body.appendChild(img)
+
+	//--------------------------------------------------------------------------
+
+	//<img>태그의 비표준 속성 적용하기
+	img.abc = '123'		// -> 적용되지 않음 / 에러가 나지 않고 무시됨
+	
+	//--------------------------------------------------------------------------
+
+	//비표준 속성값 지정하기
+	img.setAttribute("qwe", '456')
+	
+	//표준 속성값 지정하기
+	img.setAttribute("style", "border : 1px solid black")
+
+}
+
+//document.body.appendChild(img)	-> 여기서 또는 개발자모드 콘솔창에서 적용하면 img는 function 스코프이므로 적용이 안됨
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+window.onload = function () {
+	
+	//모든 id 속성값들은 window객체의 property로 등록됨
+	console.log(window.myForm)
+	
+	//window. 생략가능
+	console.log(myForm)
+	
+	//#test 객체
+	console.log(test)
+	
+	//---------------------------------------------------
+	
+	//form태그의 자식들은 <form> 노드 요소의 property로 name 값이 등록되어있음
+	console.log(myForm.data1)
+	console.log(myForm.data2)
+	
+	//---------------------------------------------------
+
+	//form태그의 name속성값은 document객체의 property로 등록되어있음
+	console.log(document.myFormname)
+	
+	//---------------------------------------------------
+
+	//DOM 객체의 표준 속성들은 해당 노드객체의 property로 등록되어있음
+	document.myFormname.data1.value = 'TEST'
+	
+	//---------------------------------------------------
+
+	//input태그의 value 속성은 현재 작성된 값을 나타냄
+	console.log(myForm.data2.value)
+	
+	//보여지는 텍스트가 변경됨
+	myForm.data2.value = "HIHIHIHIHI"
+	console.log(myForm.data2.value)
+	
+	//defaultValue 속성은 HTML코드에 작성된 초기 기본값을 나타냄
+	console.log(myForm.data2.defaultValue)
+
+	//---------------------------------------------------
+
+	//체크된 상태 반환(false)
+	console.log(myForm.chk.checked)
+	
+	//체크박스에 설정된 값(on)
+	console.log(myForm.chk.value)
+
+	//---------------------------------------------------
+
+	//비활성화 상태 확인(true)
+	console.log(myForm.btn.disabled)
+	
+	//비활성화 상태 해제 -> 활성화상태로 변경
+	myForm.btn.disabled = false
+	
+	//---------------------------------------------------
+
+	//<select> 노드 객체의 value속성값은 선택되어있는 자식노드인 <option>의 value값을 반환함
+	console.log(myForm.sel.value)
+
+	//<select>노트 객체의 value속성값을 지정하면 같은 value값을 가진 <option>항목을 선택
+	myForm.sel.value = "two"
+
+	//---------------------------------------------------
+
+	//<textarea>에 표준속성으로 value가 없음
+	//<textarea> 노드 요소의 value값은 현재 보여지는 (작성된) 내용을 반영
+	myForm.area.value = "긴 텍스트"
+	
+	//<textarea>노드 요소의 innerHTML값은 기본값을 반영
+	myForm.area.innerHTML = "innerHTML로 적용한 텍스트"
+	
+	console.log(myForm.area.defaultValue)
+
+	//---------------------------------------------------
+
+	//<form>태그의 입력값 초기화
+	//	<input type="reset">버튼의 동작
+// 	myForm.reset()
+
+	//<form>태그에 입력된 데이터 전손
+	//	<input type="submit"> 버튼의 동작
+// 	myForm.submit()
+
+	//---------------------------------------------------
+
+	//체크박스 상태를 확인하고 submit하기
+	if(myForm.chk.checked) {
+		myForm.submit()
+	} else {
+		alert("이용약관에 모두 동의하세요")
+	}
+
+}
+
+</script>
+
+</head>
+<body>
+
+<h1 id="test">form 테스트</h1>
+<h3>축약 코드</h3>
+<hr>
+
+<form action="" method="get" id="myForm" name="myFormname">
+
+	<input type="text" name="data1"><br>
+	<input type="text" name= "data2" value="기본값"><br><br>
+	
+	<input type="checkbox" name="chk">
+	<input type="button" name="btn" disabled="disabled"><br><br>
+	
+	<select name="sel">
+		<option value="one">1</option>
+		<option value="two">2</option>
+	</select><br><br>
+	
+	<textarea name="area"></textarea>
+
+</form>
+
+
+</body>
+</html>
