@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+//랜덤 숫자 정하는 함수 정의
+//	count는 2~9단 단수 / start는 곱할 1~9
+function random(count, number) {
+	return Math.floor(Math.random() * count) + number
+}
+
+//구구단 초기화 함수 정의
+function init() {
+	
+	//단수 설정 -> 2~9
+	first.value = random(8, 2)
+	
+	//곱할 수 설정
+	second.value = random(9, 1)
+	
+	//정답 입력창에 focus 주기
+	userEnter.focus()
+	
+}
+
+//결과확인 눌렀을 때 돌릴 로직
+function check() {
+	
+	if(first.value * second.value == userEnter.value) {
+		alert("정답입니다.")
+		
+		//정답 횟수 증가
+		right.value++
+		
+		//정답시 초기화함수 호출하여 새로운 게임 이어하기
+		init()
+		
+	} else {
+		alert("다시 도전하세요")
+		
+		//오답횟수 증가
+		wrong.value++
+	}
+	
+	//한 번 체크할 때마다 정답창 지우기
+	userEnter.value = ""
+	
+}
+
+window.onload = function() {
+	
+	//초기화 함수 호출
+	init()
+	
+	//결과확인을 눌렀을 때 로직 이벤트 리스너 등록
+	checkResult.onclick = check
+	
+	//정답 입력창에 엔터키 인식하기
+	userEnter.onkeydown = function() {
+		
+		//정답 입력칸에 눌린 키가 엔터인 경우
+		if(event.keyCode == 13) {
+			
+			//정답확인 로직 돌리기
+			check()
+		}
+	}
+	
+	
+}
+
+</script>
+
+</head>
+<body>
+
+<!-- Math.random() 함수 이용하여 숫자 2개 생성하기 -->
+<!-- 사용자의 입력 받기 -->
+<!-- "결과 확인"버튼을 눌렀을 때 정답/오답 판단 결과 적용 -->
+<!-- ** 태그 내용 수정해도 괜찮음 -->
+
+<h1>구구단 퀴즈</h1>
+<hr>
+
+<input type="text" id="first"> x <input type="text" id="second"><br><br>
+= <input type="text" id="userEnter">
+
+<hr>
+
+<input type="button" value="결과확인" id="checkResult"><br><br>
+
+정답횟수 : <input type="text" id="right" value="0"><br>
+오답횟수 : <input type="text" id="wrong" value="0">
+
+</body>
+</html>

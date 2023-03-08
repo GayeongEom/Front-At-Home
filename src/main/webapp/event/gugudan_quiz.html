@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+//정답 저장할 변수 전역 스코프에 선언 -> 개발자도구에서 정답 확인하기 위해
+var answer
+
+window.onload = function() {
+	
+	//2~9 사이 랜덤 정수 대입
+	first.value = Math.floor((Math.random()*8) + 2)
+	
+	//2~9 사이 랜덤 정수 대입
+	second.value = Math.floor((Math.random()*8) + 2)
+	
+	//정답 저장하기
+	answer = first.value * second.value
+	
+	
+	//결과확인을 눌렀을 때 정답인지 아닌지 알려주는 alert가 떠야 함
+	//	이벤트 리스너 등록하기
+	checkResult.addEventListener("click", check)
+	
+
+
+
+
+
+
+}
+
+//결과확인 눌렀을 때 발동시킬 함수 작성
+function check() {
+	
+	console.log(answer)
+	
+	if(userEnter.value==answer) {
+		alert("정답입니다.")
+		right.value = parseInt(right.value) + 1
+	} else {
+		alert("다시 도전하세요")
+		wrong.value = parseInt(wrong.value) + 1
+	}
+	
+}
+
+
+</script>
+
+</head>
+<body>
+
+<!-- Math.random() 함수 이용하여 숫자 2개 생성하기 -->
+<!-- 사용자의 입력 받기 -->
+<!-- "결과 확인"버튼을 눌렀을 때 정답/오답 판단 결과 적용 -->
+<!-- ** 태그 내용 수정해도 괜찮음 -->
+
+<h1>구구단 퀴즈</h1>
+<hr>
+
+<input type="text" id="first"> x <input type="text" id="second"><br><br>
+= <input type="text" id="userEnter">
+
+<hr>
+
+<input type="button" value="결과확인" id="checkResult"><br><br>
+
+정답횟수 : <input type="text" id="right" value="0"><br>
+오답횟수 : <input type="text" id="wrong" value="0">
+
+
+</body>
+</html>

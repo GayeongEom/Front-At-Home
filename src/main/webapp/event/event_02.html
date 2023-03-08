@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+window.onload = function() {
+	
+	console.log("btnOk", btnOk)
+	
+	//이벤트 프로퍼티의 값으로 콜백함수를 대입
+	btnOk.onclick = function() {
+		alert("clicked")
+	}
+	
+	//--------------------------------------------------------
+	
+	//테스트 버튼의 DOM 객체
+	var btn = document.getElementById("btnTest")
+	var btn = document.querySelector("#btnTest")
+	var btn = btnTest
+	
+	//--------------------------------------------------------
+
+	//**키보드 이벤트 : keydown, keypress, keyup
+	//	키보드 키를 눌렀다 뗐을 때 3가지 이벤트가 순서대로 발생
+	//	keydown -> keypress / 키 눌림 -> keyup / 키에서 손 뗌
+	
+	//** ctrl, alt, shift 같은 문자가 타이핑되지 않는 키 입력은 keypress 이벤트를 발생기키지 않음
+	btn.onkeydown = function() {
+		console.log("keydown")
+	}
+	
+	btn.onkeypress = function() {
+		console.log("keypress")
+	}
+	
+	btn.onkeyup = function() {
+		console.log("keyup")
+	}
+
+	//--------------------------------------------------------
+
+	//포커스, focus : 사용자의 입력을 받아들일 수 있는 상태
+	//	focus 이벤트 : 요소에 focus가 주어졌을 때 발생
+	//	blur 이벤트 : 요소에서 focus가 빠졌을 때 발생
+	inputTest.onfocus = function() {
+		btnOk.innerHTML = "<h1 style='color:red;'>FOCUS</h1>"
+	}
+	
+	inputTest.onblur = function () {
+		btnOk.innerHTML = "<h1 style='color:blue;'>BLUR</h1>"
+	}
+
+	//--------------------------------------------------------
+
+	inputTest.onkeyup = function(e) {
+		
+		//발생한 이벤트 정보 객체
+// 		console.log(e)
+	
+		//이벤트가 발생한 DOM 객체
+// 		console.log(e.target)	// -> 자기자신
+		
+		//입력된 값 확인
+		//	회원가입할 때 양식에 바르게 입력됐는지 확인할 때 사용 / keyup을 많이 사용
+// 		console.log(e.target.value)		// -> 누를때마다 감지하게 하려면 key press를 해야함
+	
+	//--------------------------------------------------------
+		
+		//이벤트가 발생한 DOM 객체
+		//	이벤트객체의 target속성과 같음
+		console.log(this)
+		
+		//입력된 값 확인
+		console.log(this.value)
+	
+	//--------------------------------------------------------
+
+		//이벤트 리스너 함수에서 event키워드는 발생한 이벤트 정보객체를 사용할 수 있음
+		console.log(event)
+
+	}
+
+}
+
+</script>
+
+</head>
+<body>
+
+<button id="btnOk">확인</button>
+
+<button id="btnTest">테스트</button>
+
+<input type="text" id="inputTest">
+
+</body>
+</html>

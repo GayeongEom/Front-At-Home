@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+window.onload = function() {
+	
+   //QUIZ.
+   //   별도의 함수를 정의하여 이벤트 리스너를 연결한다
+
+   //1. #btnTest에 마우스를 올리면 글자색을 빨강으로 변경
+   btnTest.addEventListener("mouseenter", changeColorRed)
+   
+   //2. #btnTest에서 마우스를 내리면 글자색을 검정으로 변경
+   btnTest.addEventListener("mouseleave", changeColorBlack)
+	
+}
+
+
+
+
+function changeColorRed(e) {
+// 	console.log("e", e)
+// 	console.log("this", this)
+// 	console.log("event", event)
+	
+	//HTML 태그의 style 속성을 이용한 설정
+// 	this.style.color = "red"
+// 	this.setAttribute("style", "color: red;")
+
+	//--------------------------------------------------------------
+
+	//HTML 태그의 class 속성을 이용한 설정 -> 기존의 class 속성값을 지워버림
+	//class 속성 추가하고 CSS로 클래스 선택해서 스타일주기
+	//클래스가 이미 있었다면 지워져서 대체될 것 -> 이렇게 할거면 classList에 추가해줘야함
+	this.setAttribute("class", "colorRed")
+	
+	//--------------------------------------------------------------
+
+	//HTML 태그의 class 속성을 이용한 설정 -> 기존의 class 속성값을 유지
+	this.classList.add("colorRed")
+}
+
+
+
+
+
+
+function changeColorBlack() {
+// 	this.style.color = "black"
+
+// 	this.setAttribute("style", "color: black;")
+
+	//--------------------------------------------------------------
+
+// 	this.setAttribute("class", "")
+	this.removeAttribute("class")
+	this.classList.remove("colorRed")
+
+}
+
+</script>
+
+<style type="text/css">
+
+.colorRed {
+	color: red;
+}
+
+</style>
+
+</head>
+<body>
+
+<button id="btnOk">확인 버튼</button>
+
+<button id="btnTest">테스트 버튼</button>
+
+</body>
+</html>
