@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script  type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+	
+	//#btnOk 버튼 생성
+	var $btnOk = $("<button>")
+				.attr("id", "btnOk")
+				.html("확인")
+	
+	//div 태그의 첫번째 자식으로 #btnOk 추가
+// 	$btnOk.prependTo($("div"))
+	
+	//----------------------------------------------------------
+	
+	//#btnAlert의 클릭 이벤트 처리 등록 코드
+	$("#btnAlert").on("click", function() {
+		
+		//div 태그의 첫번째 자식으로 #btnOk 추가 -> 동적으로 추가됨(정적인 것은 페이지를 로드했을 때 보이는 것등)
+		$btnOk.prependTo($("div"))
+		
+	})
+	
+	//----------------------------------------------------------
+
+	//이벤트 등록o
+// 	$btnOk.on("click", function() {
+		
+// 		alert("#btnOk 클릭됨")
+		
+// 	})
+	
+	//이벤트 등록 x
+// 	$("btnOk").on("click", function() {
+		
+// 		alert("#btnOk 클릭됨")
+		
+// 	})
+	
+	//** 이벤트 리스너 코드가 등록되는 시점에 #btnOk가 DOM 트리에 존재하지 않음
+	//	-> 동적으로 추가된(생성된) 요소에는 직접 이벤트 리스너를 등록할 수 없음
+	
+	//** 해결법!
+	//	동적으로 추가될 요소의 조상 요소에 이벤트 리스너를 등록
+	//	ex) 가능하면 div에 아니면 바디에 걸어줌(가능하다면 범위를 좁혀서 바로 위의 부모 / 안되면 조상에)
+	//	body에 클릭을 걸면 안에서 클릭되는 모두에게 이벤트가 걸리게 됨
+	//	-> 이벤트에 반응할 영역을 자식요소 중에서 필터링(제한)하기
+	//	-> *이벤트 리스너의 동적 바인딩(등록)
+	
+	//----------------------------------------------------------
+
+	//div태그에 이벤트 리스너를 등록
+	//	-> 이벤트에 대한 반응은 "div #btnOk"에서만 이루어짐
+	$("div").on("click", "#btnOk", function() {
+		
+		alert("Hello")
+		
+		//#btnAlert의 click 이벤트 리스너 해제
+		$("#btnAlert").off("click")
+		
+	} )	//div에 이벤트를 걸지만 selector를 넣어 거르기 -> 정적이 ㄴdiv에 이벤트르 ㄹ걸어두고 나중에 #btnOk라느 ㄴ자식이 생기면 얘 실행해ㅜ저 하고 맡겨두는 것
+	
+	//----------------------------------------------------------
+
+	$("#btnCancel").on("click", function() {
+		console.log("#btnCancel 클릭")
+		
+		//#btnOk 클릭 이벤트 제거하기
+		//	-> #btnOk에 등록된 click 이벤트 리스너가 없음
+		//	-> 이벤트 제거되지 않음
+// 		$("#btnOk").off("click")
+
+		//모든 div에 모든 이벤트를 제거하는 코드
+		//모든 click 이벤트를 제거
+		$("div").off("click")		
+		
+		//동적으로 등록된 #btnOk의 click 이벤트를 제거
+		$("div").off("click", "#btnOk")		
+		
+	})
+	
+})
+
+</script>
+
+
+</head>
+<body>
+
+<div>
+	<button id="btnAlert">알림</button>
+
+	<button id="btnCancel">확인 이벤트 제거</button>
+</div>
+
+</body>
+</html>

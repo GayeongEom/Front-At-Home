@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script  type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+	
+	$("#upload").change(function(e) {
+		console.log("#upload change")
+		
+		//--------------------------------------------
+
+// 		//이벤트 발생 JS DOM 객체
+// 		console.log(this)
+		
+// 		//jQuery형식 이벤트 객체
+// 		console.log(e)
+		
+// 		//JS형식 이벤트 객체
+// 		console.log(event)
+
+		//--------------------------------------------
+		
+		//이벤트 발생 객체	-> JS 객체
+// 		console.log(this)
+// 		console.log(e.target)
+// 		console.log(event.target)
+		
+		//--------------------------------------------
+		
+		//선택된 파일 리스트
+// 		console.log(this.files)
+// 		console.log(e.target.files)
+// 		console.log(event.target.files)
+		
+		
+		//선택된 파일
+		var files = e.target.files
+		console.log(files)
+		
+		//선택된 파일이 이미지가 아닐 경우
+		if(!files[0].type.includes("image")) {
+			alert("이미지가 아닙니다!")
+			
+			//선택한 파일 해제하기
+// 			e.target.value = ""
+			$(e.target).val("")		//jQuery 방식
+			
+			//이벤트 처리 중단하기
+			return
+		}
+		
+		console.log("이미지 선택")
+		
+		//--------------------------------------------
+
+		//FileReader 객체 생성
+		var reader = new FileReader()
+		
+		
+		//** FileReader 객체 메소드
+		//	FileReader객체.readAsText(File) : 파일 객체를 텍스트 정보로 읽어들임
+		//	FileReader객체.readAsDataURL(File) : 파일 객체를 DataURL 형식으로 읽어들임
+		
+		//** DataURL
+		//	바이너리 파일을 Base64인코딩을 적용하여 ASCII 문자 형태로 표현한 것 -> 64진법
+		//	텍스트 데이터처럼 횔용할 수 있음
+		//	텍스트처럼 보이지만 텍스트는 아님. ** 원본 바이너리 데이터를 유지할 수 있음
+		
+		//** 형식 
+		//	data:[MIME타입][;base64],<실제데이터>
+		
+		//** DataURL을 URL주소로 사용할 수 있음
+		//** <img>태그의 src 속성으로 DataURL을 적용할 수 있음
+		
+		//--------------------------------------------
+
+		//안전빵으로 reader를 사용하기 전에 onload를 사용해주는 것이 좋음
+		//	-> 사실 아래에 써도 그만큼 빨리 반응하진 않지만 개념적으로다가~
+		
+		//FileReader객체가 파일을 전부 읽어들여 메모리에 데이터가 로드되었을 때 발생하는 load 이벤트 처리 코드
+		//동기적이진 않지만 동기적으로 보이도록 여기로 불러오겠다
+		reader.onload = function(ev) {
+			
+			//e는 자기를 호출하는 애가 어떤거냐에 따라 달라짐
+			//jQuery 객체가 자기를 호출하면 jQuery가 되고
+			//Js가 자기를 호출하면 JS가 됨
+			//현재 JS 객체임 -> target으로 구분하기!
+// 			console.log(ev)	//이벤트 객체
+// 			console.log(ev.target)	//FileReader 객체
+			
+			//선택한 파일을 읽어들인 내용
+			console.log(ev.target.result)
+			
+			//선택한 이미지가 계속 추가됨
+// 			$("<img>")
+// 			.attr({
+				
+// 			src:ev.target.result 
+// 			, width: 150
+// 			, height: 200
+// 			})
+// 			.appendTo($("div#preview"))
+
+			//이미지를 새롭게 선택할 때마다 1장만 유지하게
+			$("div#preview").html(
+				$("<img>")
+				.attr({
+					
+				src:ev.target.result 
+				, width: 300
+				, height: 400
+				})
+			
+			)
+			
+		}
+		
+		//--------------------------------------------
+
+		//선택된 파일을 읽어들이기
+// 		reader.readAsText(files[0])		//문자 형식
+		reader.readAsDataURL(files[0])	//DataURL 형식
+		
+		//선택된 파일의 내용 확인하기
+		//	null값 출력 -> 잘못 사용됨 / readAsDataURL()은 비동기적으로 실행됨 -> 파일의 내용을 다 불러들이기 전에 실행됨
+// 		console.log(reader.result)
+		
+		//--------------------------------------------
+	
+	})
+	
+})
+
+</script>
+
+</head>
+<body>
+
+<h1>FileReader를 이용한 이미지 미리보기</h1>
+<hr>
+
+<!-- <input type="file" id="upload" multiple="multiple"> -->
+<input type="file" id="upload">
+
+<div id="preview"></div>
+
+
+</body>
+</html>

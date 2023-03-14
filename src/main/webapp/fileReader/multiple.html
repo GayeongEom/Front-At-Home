@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script  type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+
+$(function() {
+	
+	$("#upload").change(function () {
+		
+		//미리보기 div 내용물 삭제
+		$("div#preview").html("")
+
+// 		console.log(event)
+		
+		//선택된 파일리스트
+		var files = event.target.files
+		console.log("files", files)
+		
+		
+		//여러개니까 반복문으로 n번째 인덱스 지정
+		for(var i=0; i<files.length; i++) {
+			
+			if(files[i].type.includes("image")){
+				//파일을 읽어들이는 객체 생성
+				var reader = new FileReader()
+				
+				//다 로드 되면 할 일 정의
+				reader.onload = function(ev) {
+					
+// 					console.log("this", this)
+					//읽어들인 내용 확인
+// 					console.log("ev", ev)	//JS 객체
+	
+				$("<img>")
+				.attr({
+// 					src: this.result
+					src: ev.target.result
+					, width: 150
+					, height: 200
+				}).appendTo("div#preview")
+					
+					
+				}
+				
+				reader.readAsDataURL(files[i])
+
+			}
+		}
+		
+
+		
+	})
+	
+	
+})
+
+</script>
+
+</head>
+<body>
+
+<input type="file" id="upload" multiple="multiple">
+
+<div id="preview"></div>
+
+</body>
+</html>

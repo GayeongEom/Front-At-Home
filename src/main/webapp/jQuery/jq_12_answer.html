@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+
+$(function() {
+
+	$("<p>").text("둘").css({
+		color: "blue"
+		, backgroundColor: "red"
+	}).insertAfter($("div").find("p").eq(0))
+	
+	//---------------------------------------------
+	
+	$("<p style='color: blue; background-color: red;'>둘-2</p>")
+	.insertBefore($("div").find("p").eq(1))
+
+	//---------------------------------------------
+
+	//재사용성이 높아서 범용성있고 더 좋음
+	$("div p").eq(0).after(
+		$("<p>").html("둘-3").addClass("colorBlue bgRed")
+	)
+})
+
+
+</script>
+
+<style type="text/css">
+
+.colorBlue {color: blue;}
+.bgRed {background-color: red;}
+
+</style>
+
+
+</head>
+<body>
+
+<div>
+	<p id="first">하나</p>
+	
+	<p>셋</p>
+	<p>넷</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+
+$(function() {
+	
+	var $p = $("<p>둘</p>")
+	
+	$p.attr("style", "color: blue; background: red;")
+	
+	$("p#first").after($p)	
+	
+	
+	//------------------------------------------------------
+	
+	$("<p>둘-2</p>").attr("style", "color: lightblue; background: steelblue;").insertAfter("p:first-child")
+	
+	//------------------------------------------------------
+
+	$("<p>둘-3</p>").attr("style", "color: lightblue; background: steelblue;").insertAfter($('p').eq(0))
+
+
+})
+
+
+</script>
+
+</head>
+<body>
+
+<div>
+	<p id="first">하나</p>
+	
+	<p>셋</p>
+	<p>넷</p>
+</div>
+
+</body>
+</html>

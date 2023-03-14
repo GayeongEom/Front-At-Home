@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script  type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+
+$(function() {
+	
+	var $div = $("div")
+	
+	console.log("width", $div.css("width"))
+	
+	//.css()함수는 !important를 제외한 설정값만 다룰 수 있음
+	console.log("height", $div.css("height"))
+	
+	//!important를  포함한 속성값 설정
+	//	-> 잘못된 값을 입력한 것으로 판단하여 적절한 설정값(400px)도 적용되지 않음
+	$div.css("width", "400px !important")
+	$div.css("width", "500px")
+	
+	//-----------------------------------------------------------
+	
+	//기본 형태의 객체를 jQuery에서는 PlainObject로 부름
+	//	-> 배열 제외, 내장객체 제외
+	var obj = {
+		"key":"value"
+		, key2:123
+	}
+	
+	console.log(obj)
+	
+	//-----------------------------------------------------------
+	
+	var classObj = {
+		"width": "400px"
+		, "height":"300px"
+		, "border-color":"lightblue"
+	}
+	
+	$div.css(classObj)
+	
+	$div.css({
+		"width": "300px"
+			, "height":"400px"
+			, "borderColor":"gray"
+	})
+	
+	//-----------------------------------------------------------
+
+	var info = $div.css(["width", "height", "border-width"])
+	console.log(info)
+	
+	// - 기호를 뺄셈으로 인식 -> width를 -연산자의 피연산자 변수로 생각함
+// 	console.log("border-width", info.border-width)
+	
+	//Camel Case로 변환해서 사용할 수 없음
+// 	console.log(info.borderWidth)
+	
+	//JS Object의 키 값에 -기호가 있을 경우 []대괄호를 이용해서 키값을 적용해야 함
+	console.log(info["border-width"])
+	
+	info["border-width"] = "3px"
+	//info에만 적용이 되어있음
+	console.log(info)
+	
+	$div.css(info)
+	
+})
+
+</script>
+
+</head>
+<body>
+
+<div style="width: 300px; height: 200px !important;  border: 1px solid steelblue">
+	<p>하나</p>
+	<p>둘</p>
+	<p>셋</p>
+
+</div>
+
+
+</body>
+</html>

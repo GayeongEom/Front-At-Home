@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script  type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+
+$(function() {
+	
+	$("#btnOk").on("click", sayHi)
+	$("#btnOk").on("mouseenter", red)
+	$("#btnOk").on("mouseleave", blue)
+	
+	//------------------------------------------------
+	
+	//이벤트 리스너가 한번씩만 동작함
+	$("#btnAlert").one({
+		click: sayHi
+		, mouseenter: red
+		, mouseleave:blue
+	})
+	
+	//------------------------------------------------
+
+	//on, one 상관없이 click 이벤트 리스너 제거
+	$("button").off("click")
+	
+	//------------------------------------------------
+
+	//#btnAlert에 dbclick 이벤트 리스너 등록
+	$("#btnAlert").dblclick(function() {
+		console.log("#btnAlert dblclick")
+	})
+	
+	$("#btnOk").mouseover(function() {
+		console.log("#btnOk mouseover")
+		
+		//#btnAlert에 dblclick 이벤트 발생시키기
+		$("btnAlert").dblclick()
+		$("btnAlert").trigger("dblclick")
+	})
+
+
+
+})
+
+
+function sayHi() {
+	console.log("Hi")
+}
+
+function red() {
+// 	console.log(this)
+	$(this).css("color", "red")
+}
+
+function blue() {
+	$(this).css("color", "blue")
+}
+
+
+
+</script>
+
+</head>
+<body>
+
+<div id="myDiv">
+
+	<button id="btnOk">확인</button>
+	<button id="btnAlert">알림</button>
+
+</div>
+
+</body>
+</html>

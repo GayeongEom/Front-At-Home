@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- jQuery 2.2.4 -->
+<script  type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<!-- CSS -->
+
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+<!-- JS -->
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+		
+<script type="text/javascript">
+
+$(function() {
+	
+	$("#sliderbox").slick({
+		autoplay:true
+		, autoplaySpeed: 1500
+		, dots: true
+		, 
+	})
+	
+})
+
+
+</script>
+
+<style type="text/css">
+
+#sliderbox{
+	width: 300px;
+	height: 400px;
+	
+	margin: 0 auto;
+}
+
+#sliderbox img {
+	width: 300px;
+	height: 400px;
+
+}
+
+body {
+	background-color: lightblue;
+}
+
+
+
+</style>
+
+
+</head>
+<body>
+
+<div id="sliderbox">
+
+	<div><img src="../resources/image/s1.jpg"></div>
+	<div><img src="../resources/image/s2.jpg"></div>
+	<div><img src="../resources/image/s3.jpg"></div>
+	<div><img src="../resources/image/s4.jpg"></div>
+	<div><img src="../resources/image/s5.jpg"></div>
+
+</div>
+
+
+</body>
+</html>

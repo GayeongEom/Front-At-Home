@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script  type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+
+$(function() {
+	
+	//포커스 주기
+	$("input")[0].focus()
+	
+	//전송버튼 클릭시 alert로 메세지 보여주기
+	$("#btnSend").click(function() {
+	
+		alert($("input")[0].value)
+		
+		
+	})
+	
+// 	$("input")[0].keydown(function() {
+// 		console.log("input keydown")
+// // 		if(keyCode==13) {
+// // 			clickEvent()
+// // 		}
+		
+// 	})
+
+// 	$("input[name~='msg']").keydown(function(){
+		
+// 		console.log("this", this)
+// 	})
+	
+	//$("input")[0] 는 JS 객체
+	//이벤트는 jQuery 객체에 걸어줘야 함
+	$("input").eq(0).keydown(function(){
+		console.log("key down")
+	})
+	
+
+
+	
+		
+	
+	
+	
+})
+
+function clickEvent() {
+	alert($("input")[0].value)
+}
+
+
+
+</script>
+
+</head>
+<body>
+
+<div>
+	<input type="text" name="msg">
+	<button id="btnSend">전송</button>
+</div>
+
+</body>
+</html>

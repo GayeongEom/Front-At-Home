@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script  type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+
+$(function() {
+	
+	//노드 요소를 찾아 jQuery DOM 객체로 반환
+	//	$("CSS Selector")
+	
+	
+	//#p1 노드를 jQuery DOM 객체로 얻어오기
+	var jQueryP1 = $("#p1")
+	
+	console.log("---- jQuery DOM ----")
+	console.log(jQueryP1)
+	
+	//--------------------------------------------------------------
+	
+	var jsP1 = document.getElementById("p1")
+	
+	console.log("---- js DOM ----")
+	console.log(jsP1)
+	
+	//순수 JS로도 간편하게 쓸 수 있지만, 클래스 등 모든 형태에 대한 (범용성)이 떨어짐
+	console.log(p1)
+	
+	//--------------------------------------------------------------
+
+	//순수 JS DOM 객체를 이용한 스타일 지정
+	p1.style.color = "red"
+	
+	//에러, jQuery DOM 객체에 JS DOM API를 적용할 수 없음
+// 	jQueryP1.style.background = "#ccc"
+	
+	
+	//jQuery DOM객체를 이용한 스타일 지정
+	jQueryP1.css("border", "1px solid black")
+	
+	//--------------------------------------------------------------
+
+	console.log("---- $('p') ----")
+	console.log($("p"))
+	
+	//.css()함수는 선택된 요소가 여러개여도 각각 style이 적용됨
+	$("p").css("font-style", "italic")
+	
+	//--------------------------------------------------------------
+
+	var p3 = document.getElementById("p3")
+	
+	//jQuery DOM 객체인걸 가시적으로 알 수 있도록~ 이런 규칙이 있는 것이 아니라 ~
+	var $p3 = $("#p3")
+	
+	//--------------------------------------------------------------
+
+	//현재는 그냥 배열 / DOM 객체로 사용하고 싶으면 인덱스를 붙여서 하나를 지정해줘야함
+	var p2 = document.getElementsByClassName("p2")[0]
+	console.log("p2", p2)
+	
+	//JS DOM 객체 -> jQuery DOM 객체 변환
+	var $p2 = $(p2)
+	console.log("$p2", $p2)
+	
+})
+
+
+</script>
+
+</head>
+<body>
+
+<div>
+	<p id="p1">하이</p>
+	<p class="p2">Hello</p>
+	<p id="p3">Welcome</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script  type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+
+$(function() {
+	
+	$("#upload").change(function(e) {
+
+		//JS객체
+		console.log(this)
+		
+		//JS 객체
+		console.log(event)
+		
+		//jQuery 객체
+		console.log(e)
+		
+		//-------------------------------------------
+		
+		//선택된 파일의 목록 -> FileList
+		var files = event.target.files
+		console.log(files)
+		
+		//선택한 파일이 이미지가 아닌 경우
+		if(!files[0].type.includes("image")) {
+			
+			alert("이미지가 아닙니다")
+			
+			//선택한 파일 업로드 안되도록
+			console.log(this)	//JS 객체
+			this.value=""
+			
+			//이벤트 처리 중단
+			return
+		}
+		
+		//FileReader 객체 생성
+		var reader = new FileReader()
+		
+		//파일을 읽어들인 후 실행할 함수 
+		reader.onload = function() {
+			
+			console.log("온로드 디스", this)
+			
+			//div에 dataURL 추가하기
+			$("div#preview").html(
+				
+				$("<img>")
+				.attr({
+					src: this.result
+					, width: 300
+					, height: 400
+				})
+			)
+			
+		}
+		
+		
+		
+		//선택한 파일 읽어들이기
+		reader.readAsDataURL(files[0])
+		
+		
+		
+		
+		
+	})
+	
+})
+
+</script>
+
+</head>
+<body>
+
+<h1>FileReader를 이용한 이미지 미리보기</h1>
+<hr>
+
+<input type="file" id="upload">
+
+<div id="preview"></div>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script  type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+
+	var $myDiv = $("div#myDiv")
+	
+	//기존에 갖고있던 innerHTML값 출력
+	console.log($myDiv.html())
+	
+	//기존에 갖고있던 innerHTML값을 덮어씌움
+	$myDiv.html("<h3>HTML DIV</h3>")
+	
+	//---------------------------------------------------
+	
+	//구문 추가하기
+	$myDiv.html($myDiv.html() + "<h3>html 추가</h3>")
+	
+	//---------------------------------------------------
+
+	//기존 태그 텍스트에 추가내용 작성하기
+	var h = $myDiv.html()
+	h += "<h3>한번 더 추가</h3>"
+	
+	//최종 태그 텍스트 반영하기
+	$myDiv.html(h)
+	
+	//---------------------------------------------------
+
+	var $div = $("<div>")
+	$div.text("<p>text 테스트</p>")
+	
+	$myDiv.append($("<hr>"))
+	
+	$myDiv.append($div)
+
+	//---------------------------------------------------
+
+	console.log($myDiv.text())
+	
+	
+})
+
+
+
+</script>
+
+</head>
+<body>
+
+<div id="myDiv">
+
+<h1>jQuery 테스트</h1>
+
+</div>
+
+</body>
+</html>

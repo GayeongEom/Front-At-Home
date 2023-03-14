@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script  type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+
+$(function() {
+
+	$("#upload").change(function(e) {
+		
+		//this는 JS 객체이자 동시에 이벤트가 발생한 객체
+		var files = this.files
+		console.log(files)
+		
+		
+		
+		
+	})
+	
+	
+})
+
+</script>
+
+</head>
+<body>
+
+<input type="file" id="upload" multiple="multiple">
+
+<div id="preview"></div>
+
+</body>
+</html>

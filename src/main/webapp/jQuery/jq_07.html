@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script  type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+
+$(function() {
+	
+	//새로운 <div>태그 노드객체 생성하기
+	var $div = $("<div>")	//만들어지긴 했지만 DOM TREE에 추가가 되지 않아 나오지 않음
+	
+	//객체는 생성되었지만 DOM트리에는 추가되지 않음
+	console.log($div)
+	
+	//새로 생성된 객체 선택 안됨
+	$("div")	//DOM TREE에서 div를 찾아서 보여줌
+	console.log($("div"))
+	
+	//---------------------------------------------------------------------
+	
+	var $myDiv = $("div#myDiv")
+	
+	//#myDiv노드의 자식으로 새로운 <div>노드 추가
+	$myDiv.append($div)
+	
+	//---------------------------------------------------------------------
+	
+	var $div2 = $("<div>Hello</div>")
+	$myDiv.append($div2)
+	
+	//---------------------------------------------------------------------
+
+	//.html() : .innerHTML과 같은 역할 > 속성값 지정
+	$div.html("처음에 새로 만든 DIV")
+
+	//---------------------------------------------------------------------
+
+	$(document.body).append(
+	
+	$("<div>")
+	.append($("<ul>")
+			.append($("<li>").html("하이"))
+			.append($("<li>").html('헬로')))
+	.append($("<ul>")
+			.append($("<li>").html("HIHI"))
+			.append($("<li>").html("Hello")))
+			
+	)
+	
+	
+	var $newDiv = 	
+		$("<div>")
+		.append($("<ul>")
+			.append($("<li>").html("하이"))
+			.append($("<li>").html('헬로')))
+		.append($("<ul>")
+			.append($("<li>").html("HIHI"))
+			.append($("<li>").html("Hello")))
+			
+	$(document.body).append($newDiv)
+
+	//---------------------------------------------------------------------
+
+	//객체 복사
+	var $cloneDiv = $newDiv.clone()
+	
+	$(document.body).append($("<hr>"))
+	$(document.body).append($cloneDiv)
+	
+	$(document.body)
+	.append($("<hr>"))
+	.append($cloneDiv)
+	
+	$cloneDiv.append($("<h1>안녕하세요!</h1>"))
+
+})
+
+
+</script>
+
+
+</head>
+<body>
+
+<div id="myDiv">
+	<p>안녕</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script  type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+	
+	//입력창에 focus 이벤트 발생시키기
+	$("input[name~='msg']").focus()
+	
+	//--------------------------------------------------------
+	
+	$("#btnSend").click(function() {
+		console.log("#btnSend click")
+		
+		//입력값이 없을 때 처리 중단
+		if($(this).prev().val() == "") {
+			alert("[WARNING] 내용을 입력하세요!")
+			
+			return
+		}
+		
+// 		alert("입력메세지 : " + $("input[name~='msg']").val())
+// 		$("input[name~='msg']").val("")	//입력창 초기화
+// 		$("input[name~='msg']").focus()	//입력창 포커스
+		
+	//--------------------------------------------------------
+
+	//jQuery DOM 객체를 변수에 저장해놓고 사용하기
+// 	var $input = $("input[name~='msg']")
+	
+// 	alert("입력메세지 : " + $input.val())
+// 	$input.val("")	//입력창 초기화
+// 	$input.focus()	//입력창 포커스
+	
+	//--------------------------------------------------------
+
+	//DOM 트리 순회코드(.prev())를 활용하기
+	//	this인 전송버튼을 기준으로 이전형제인 input을 고르기
+	
+	alert("입력메세지 : " + $(this).prev().val())
+	$(this).prev().val("")	//입력창 초기화
+	$(this).prev().focus()	//입력창 포커스
+	
+	})
+	
+	//--------------------------------------------------------
+
+	$("input[name~='msg']").keydown(function(e) {
+		
+// 		console.log("this", this)	//이벤트 발생 노드 JS객체
+// 		console.log("event", event)	//발생한 이벤트 JS객체
+// 		console.log("e", e)			//발생한 이벤트 jQuery 객체
+		
+		//------------------------------------------------------
+		
+		//입력된 키보드 키의 종류(값) 확인
+// 		console.log(event.keyCode)	//JS 방법
+// 		console.log(e.keyCode)	//jQuery 방법
+
+		//------------------------------------------------------
+
+		//엔터키 입력
+		if(e.keyCode == 13) {
+			console.log("enter key")
+			
+			//#btnSend 객체에 클릭 발생시키기
+// 			$("#btnSend").trigger("click")
+			$("#btnSend").click()
+		}
+		
+	})
+	
+	//------------------------------------------------------
+
+	//#btnSend 버튼 비활성화
+	$("#btnSend").prop("disabled", true)
+	
+	$("input[name~='msg']").keyup(function() {
+		console.log("key up", $(this).val())
+		
+		//입력된 값이 남아있는지 판단해서 #btnSend 활성/비활성 처리
+		if($(this).val() =="") {
+
+			$("#btnSend").prop("disabled", true)	//비활성화
+			
+		} else {
+			
+			$("#btnSend").prop("disabled", false)	//활성화
+
+		}
+	})
+	
+	
+})
+
+
+
+
+
+</script>
+
+</head>
+<body>
+
+<div>
+	<input type="text" name="msg">
+	<button id="btnSend">전송</button>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script  type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+	
+	$('p').eq(0).is($("#stop"))
+	
+	console.log($('p').eq(0).is($("#stop")))
+	console.log($('p').eq(1).is($("#stop")))
+	console.log($('p').eq(2).is($("#stop")))
+	
+	console.log("-----------------------")
+	
+	$("p").each(function(){
+		
+		if($("#stop").is($(this))) {
+			
+			//현재 호출된 콜백함수를 중단
+// 			return
+
+			//현재, 앞으로 남은 모든 콜백함수를 중단
+			return false
+			
+			//** 콜백함수에서 return false로 함수를 중단하면 콜백함수를 호출한 객체(또는 함수)에 false를 전달
+			//** 콜백함수가 종료되면서, .each()함수도 종료됨
+		
+		}
+		
+		$(this).css("background", "gray")
+	})
+	
+	console.log("-----------------------")
+
+	console.log($("div").find("#stop"))
+	console.log($("div #stop"))
+	
+})
+
+
+</script>
+
+</head>
+<body>
+
+<div>
+	<span>하나</span>
+	<p>둘</p>
+	<pre>셋</pre>
+	<p id="stop">넷</p>
+	<p>다섯</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+.red{color:red;}
+.blue{color:blue;}
+
+</style>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	//div 태그에 st4 클래스항목 추가하기
+	$("div").addClass("st4")
+	
+	//div태그에 st3 클래스항목 제거하기
+	$("div").removeClass("st2")
+	
+	//div태그의 모든 클래스 항목 제거하기
+	//	설정값들을 모두 제거하기 전 calss 속성은 남아있음
+	$("div").removeClass()
+	
+	//-----------------------------------------------------------------
+	
+	//CSS를 임베디드 방식으로 관리하기
+	$("p").addClass("red")
+	
+	$("p").eq(0).addClass("blue")
+	
+	$("p").eq(1).removeClass("red")
+	
+	//red 클래스 항목을 토글 -> red가 있으면 삭제, 없으면 추가해줌
+	$("p").eq(2).toggleClass("red")
+	
+	$("div").click(function() {
+		$("p").eq(2).toggleClass("red")
+	})
+   
+	//-----------------------------------------------------------------
+
+	//HTML 표준속성 설정하기
+	$("div").attr("id", "myDiv")
+	
+	//HTML 비표준속성 설정하기
+	$("div").attr("abcde", 12345)
+	
+	//** .attr() 함수는 HTML 표준, 비표준 속성 모두 설정할 수 있음
+
+	//-----------------------------------------------------------------
+
+	//style속성 "background"를 적용
+	$("p").eq(2).css("background", "orange")
+	
+	//HTML 일반 속성(비표준) "background"를 적용
+	$("p").eq(2).attr("background", "tomato")
+
+	//-----------------------------------------------------------------
+
+	$("p").eq(1).attr("style", "width:200px;")
+
+	//기존 style을 무시하고 적용되므로 정말 필요한 경우가 아니라면 삼가해야함
+	$("div").attr("style", "background:steelblue;")
+	
+	$("p").eq(0).attr("style", "color: tomato !important")
+	
+	//-----------------------------------------------------------------
+
+	$("p").eq(0).attr("style", "color:tomato !important; border: 1px solid #ccc;")
+	
+	//첫번재 매개변수 : 설정값의 인덱스(순번)
+	//두번째 매개변수 : 기존에 설정된 설정값
+	//리턴값 : 새롭게 적용될 속성값
+	$("p").eq(0).attr("style", function(i, a) {
+		
+		console.log(i, a)
+		
+	
+		return a + "" + "font-style: italic;"
+		
+	})
+
+	//-----------------------------------------------------------------
+
+	//HTML 속성 여러개를 한번에 설정하기
+	$("p").eq(1).attr({
+		"a":"1"
+		, "b":"2"
+		, "title":"테스트"
+
+	})
+
+})
+
+</script>
+
+
+</head>
+<body>
+<div class="st1 st2 st3" style="width: 300px; height: 200px !important; border: 1px solid lightblue;">
+   <p>하나</p>
+   <p>둘</p>
+   <p>셋</p>
+</div>
+
+</body>
+</html>

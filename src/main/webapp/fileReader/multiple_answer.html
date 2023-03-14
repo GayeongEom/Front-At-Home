@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script  type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+	
+	$("#upload").change(function() {
+		
+		//#preview의 내용물 삭제
+		$("#preview").html("")
+	
+		//-------------------------------------------------------------
+		
+		var files = this.files
+// 		console.log(this)
+// 		console.log(files)
+
+		//모든 파일 처리
+		for(var i=0; i<files.length; i++) {
+			
+			//이미지가 아니면 처리 중단
+			if(!files[i].type.includes("image")) {
+			
+				alert((i+1) + "번째 파일(" + files[i].name + ")은 이미지가 아닙니다.")
+				
+				//파일이 이미지가 아니면 미리보기를 보여주지 않고 스킵
+				continue
+			}
+
+			//-------------------------------------------------------------
+			
+			//이미지일 경우 처리 -> 미리보기 구현
+			
+			//FileReader 객체 생성
+			var reader = new FileReader()
+			
+			//파일 로드되었을 때 이벤트 처리
+			reader.onload = function() {
+				
+				$("<img>")
+				.attr({
+					src: this.result
+					, width: 300
+					, height: 400
+				})
+				.appendTo($("#preview"))
+				
+			}
+			
+			//파일 내용 dataURL로 읽어오기
+			reader.readAsDataURL(files[i])
+			
+		}
+		
+	})
+	
+})
+
+</script>
+
+</head>
+<body>
+
+<input type="file" id="upload" multiple="multiple">
+
+<div id="preview"></div>
+
+</body>
+</html>
