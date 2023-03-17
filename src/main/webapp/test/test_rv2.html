@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link rel="stylesheet" href="./test.css">
+
+<script  type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+
+$(function() {
+	
+	//새로고침하면 아이디에 포커스
+	$("#uid").focus()
+	
+	//비밀번호 클릭하면 규칙 출력
+	$("#upw").focus(function() {
+		
+		
+	})
+	
+})
+
+</script>
+
+</head>
+<body>
+
+<form action="" method="get">
+	<fieldset>
+		<label for="uid">아이디</label>
+		<input type="text" id="uid" class="input"><br>
+		<span id="uid_msg" class="msg"></span><br>
+	
+		<label for="upw">패스워드</label>
+		<input type="password" id="upw" class="input"><br>
+		<span id="upw_msg" class="msg"></span><br>
+	
+		<label for="upw_check">패스워드 확인</label>
+		<input type="password" id="upw_check" class="input"><br>
+		<span id="upw_check_msg" class="msg"></span><br>
+	
+		<label for="uemail">이메일</label>
+		<input type="email" id="uemail" size="9">@<input type="email" id="uemail" size="9"><br>
+	
+		<label>주소</label>
+		<input type="text" id="uaddress1" class="input"><br>
+		
+		<label></label>
+		<input type="text" id="uaddress2" class="input">
+	
+	<button>가입</button>
+	
+	</fieldset>
+	
+</form>
+
+</body>
+</html>
