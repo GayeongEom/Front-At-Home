@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<link rel="stylesheet" href="./test.css">
+
+<script  type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+
+$(function(){
+	
+	//내가 원하는 모습 -> 맞는 표현법인지는 모르겠음,,
+	$("#uid").blur(function() {
+		confirm(this)
+	})	//this로 넣어서 자기 자신을 매개변수로 보내기! ec에 매개변수로 자기 자신이 전달되고, 자기 자신이 보내지므로 check 내에서 ec로 자기자신 지칭 가능
+
+	$("#upw").blur(function() {
+		confirm(this)
+	})
+	
+	$("#upw_check").blur(function() {
+		confirm(this)
+	})
+	
+// 	//이렇게 부르면 ec가 documnet로 출력됨
+// 	$("#uid").blur(confirm(this))
+	
+// 	//이렇게는 부를 수 없는지...
+// 	$("#uid").confirm(this)
+	
+	
+})
+
+//ec, this
+function confirm(ec) {
+	
+// 	console.log("ec", ec)
+	if($(ec).val()=="") {
+		$(ec).next().next().html("필수 입력요소입니다")
+	} else {
+		$(ec).next().next().html("")
+	}
+	
+}
+
+
+</script>
+
+<title>Insert title here</title>
+</head>
+<body>
+
+<form action="" method="get">
+	<fieldset>
+		<label for="uid">아이디</label>
+		<input type="text" id="uid" class="input"><br>
+		<span id="uid_msg" class="msg"></span><br>
+	
+		<label for="upw">패스워드</label>
+		<input type="password" id="upw" class="input"><br>
+		<span id="upw_msg" class="msg"></span><br>
+	
+		<label for="upw_check">패스워드 확인</label>
+		<input type="password" id="upw_check" class="input"><br>
+		<span id="upw_check_msg" class="msg"></span><br>
+	
+		<label for="uemail">이메일</label>
+		<input type="email" id="uemail" size="9">@<input type="email" id="uemail" size="9"><br>
+	
+		<label>주소</label>
+		<input type="text" id="uaddress1" class="input"><br>
+		
+		<label></label>
+		<input type="text" id="uaddress2" class="input">
+	
+	<button>가입</button>
+	
+	</fieldset>
+	
+</form>
+
+</body>
+</html>
