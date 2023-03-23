@@ -9,13 +9,23 @@
 
 <style type="text/css">
 
-/* div { */
-/* 	border: 1px solid #ccc; */
-/* } */
+#btn {
+	display: flex;
+	justify-content: flex-end;
+}
 
-/* a { */
-/* 	text-decoration: none; */
-/* } */
+nav {
+	display: flex;
+	justify-content: center;
+}
+
+a {
+	text-decoration: none;
+}
+
+table {
+	text-align: center;
+}
 
 
 </style>
@@ -27,134 +37,172 @@
 <body>
 
 <div class="container">
-	<div>
-		상품관리
-		<input type="checkbox">상품명
-		<input type="checkbox">상품번호
-		<input type="search">
-	</div>
-	<div>
-	<table class="table table-border">
-		<tr>
-			<th><input type="checkbox"></th>
-			<th>상품명</th>
-			<th>옵션</th>
-			<th>남은 개수</th>
-			<th>개수 변경</th>
-		</tr>
-		<tr>
-			<td><input type="checkbox"></td>
-			<td>test1</td>
-			<td>사이즈 : 100<br>색상 : 빨강</td>
-			<td>1</td>
-			<td>
-				<input type="number"><button>변경</button>
-			</td>
-		</tr>
-		<tr>
-			<td><input type="checkbox"></td>
-			<td>test2</td>
-			<td>사이즈 : 105<br>색상 : 파랑</td>
-			<td>10</td>
-			<td>
-				<input type="number"><button>변경</button>
-			</td>
-		</tr>
-		<tr>
-			<td><input type="checkbox"></td>
-			<td>test3</td>
-			<td>사이즈 : 100</td>
-			<td>100</td>
-			<td>
-				<input type="number"><button>변경</button>
-			</td>
-		</tr>
-		<tr>
-			<td><input type="checkbox"></td>
-			<td>test4</td>
-			<td>색상 : 파랑</td>
-			<td>22</td>
-			<td>
-				<input type="number"><button>변경</button>
-			</td>
-		</tr>
-		<tr>
-			<td><input type="checkbox"></td>
-			<td>test5</td>
-			<td>색상 : 빨강</td>
-			<td>21</td>
-			<td>
-				<input type="number"><button>변경</button>
-			</td>
-		</tr>
-		<tr>
-			<td><input type="checkbox"></td>
-			<td>test6</td>
-			<td>사이즈 : 110<br>색상 : 보라</td>
-			<td>20</td>
-			<td>
-				<input type="number"><button>변경</button>
-			</td>
-		</tr>
-		<tr>
-			<td><input type="checkbox"></td>
-			<td>test7</td>
-			<td>색상 : 남색</td>
-			<td>0</td>
-			<td>
-				<input type="number"><button>변경</button>
-			</td>
-		</tr>
-		<tr>
-			<td><input type="checkbox"></td>
-			<td>test8</td>
-			<td>사이즈 : 110<br>색상 : 노랑</td>
-			<td>10</td>
-			<td>
-				<input type="number"><button>변경</button>
-			</td>
-		</tr>
-		<tr>
-			<td><input type="checkbox"></td>
-			<td>test9</td>
-			<td>사이즈 : 110<br>색상 : 노랑</td>
-			<td>21</td>
-			<td>
-				<input type="number"><button>변경</button>
-			</td>
-		</tr>
-		<tr>
-			<td><input type="checkbox"></td>
-			<td>test10</td>
-			<td>사이즈 : 110<br>색상 : 노랑</td>
-			<td>1</td>
-			<td>
-				<input type="number"><button>변경</button>
-			</td>
-		</tr>
-		
-	</table>
-	</div>
-	<div>
-		<button>추가</button>
-		<button>변경</button>
-	</div>
-	<div>
-		<nav aria-label="Page navigation example">
-  		<ul class="pagination">
-   			<li class="page-item">
-      			<a class="page-link" href="#" aria-label="Previous">
-        			<span aria-hidden="true">&laquo;</span>
-      			</a>
-    		</li>
-    		<li class="page-item"><a class="page-link" href="#">1</a></li>
-    		<li class="page-item">
-      			<a class="page-link" href="#" aria-label="Next">
-        			<span aria-hidden="true">&raquo;</span>
-      			</a>
-    		</li>
-  		</ul>
-		</nav>
+	<div class="row">
+		<div class="col-4">
+			<div class="list-group">
+				<a href = "#" class="list-group-item-action">대시보드</a>		
+				<a href = "#" class="list-group-item-action">회원 관리</a>		
+				<a href = "#" class="list-group-item-action">관리자 관리</a>		
+				<a href = "" class="list-group-item-action">상품 관리</a>		
+				<a href = "#" class="list-group-item-action">주문 관리</a>		
+				<a href = "#" class="list-group-item-action">리뷰 관리</a>		
+				<a href = "#" class="list-group-item-action">문의 관리</a>		
+			</div>
+		</div>
+		<div class="col-8">
+			<div>
+				<span class="fs-4 fw-bold" style="margin-right: 200px;">상품관리</span>
+				<input type="checkbox" class="me-2"><span class="me-5">상품명</span>
+				<input type="checkbox" class="me-2"><span class="me-5">상품번호</span>
+				<input type="search">
+			</div>
+			<div>
+			<table class="table table-bordered">
+				<thead class="table-light">
+					<th><input type="checkbox"></th>
+					<th>상품명</th>
+					<th>옵션</th>
+					<th>남은 개수</th>
+					<th class="w-25">개수 변경</th>
+				</thead>
+				<tr>
+					<td><input type="checkbox"></td>
+					<td>test1</td>
+					<td>사이즈 : 100<br>색상 : 빨강</td>
+					<td>1</td>
+					<td>
+						<input type="number" value="0" class="w-25">
+						<input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
+						<label class="btn btn-primary m-2" for="btn-check">변경</label>
+					</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox"></td>
+					<td>test2</td>
+					<td>사이즈 : 105<br>색상 : 파랑</td>
+					<td>10</td>
+					<td>
+						<input type="number" value="0" class="w-25">
+						<input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
+						<label class="btn btn-primary m-2" for="btn-check">변경</label>
+					</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox"></td>
+					<td>test3</td>
+					<td>사이즈 : 100</td>
+					<td>100</td>
+					<td>
+						<input type="number" value="0" class="w-25">
+						<input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
+						<label class="btn btn-primary m-2" for="btn-check">변경</label>
+					</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox"></td>
+					<td>test4</td>
+					<td>색상 : 파랑</td>
+					<td>22</td>
+					<td>
+						<input type="number" value="0" class="w-25">
+						<input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
+						<label class="btn btn-primary m-2" for="btn-check">변경</label>
+					</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox"></td>
+					<td>test5</td>
+					<td>색상 : 빨강</td>
+					<td>21</td>
+					<td>
+						<input type="number" value="0" class="w-25">
+						<input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
+						<label class="btn btn-primary m-2" for="btn-check">변경</label>
+					</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox"></td>
+					<td>test6</td>
+					<td>사이즈 : 110<br>색상 : 보라</td>
+					<td>20</td>
+					<td>
+						<input type="number" value="0" class="w-25">
+						<input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
+						<label class="btn btn-primary m-2" for="btn-check">변경</label>
+					</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox"></td>
+					<td>test7</td>
+					<td>색상 : 남색</td>
+					<td>0</td>
+					<td>
+						<input type="number" value="0" class="w-25">
+						<input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
+						<label class="btn btn-primary m-2" for="btn-check">변경</label>
+					</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox"></td>
+					<td>test8</td>
+					<td>사이즈 : 110<br>색상 : 노랑</td>
+					<td>10</td>
+					<td>
+						<input type="number" value="0" class="w-25">
+						<input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
+						<label class="btn btn-primary m-2" for="btn-check">변경</label>
+					</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox"></td>
+					<td>test9</td>
+					<td>사이즈 : 110<br>색상 : 노랑</td>
+					<td>21</td>
+					<td>
+						<input type="number" value="0" class="w-25">
+						<input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
+						<label class="btn btn-primary m-2" for="btn-check">변경</label>
+					</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox"></td>
+					<td>test10</td>
+					<td>사이즈 : 110<br>색상 : 노랑</td>
+					<td>1</td>
+					<td>
+						<input type="number" value="0" class="w-25">
+						<input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
+						<label class="btn btn-primary m-2" for="btn-check">변경</label>
+					</td>
+				</tr>
+				
+			</table>
+			</div>
+			<div id="btn">
+				<input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
+				<label class="btn btn-primary m-2" for="btn-check">추가</label>
+				
+				<input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
+				<label class="btn btn-secondary m-2" for="btn-check">변경</label>
+			</div>
+			<div>
+				<nav aria-label="Page navigation example">
+		  		<ul class="pagination">
+		   			<li class="page-item">
+		      			<a class="page-link" href="#" aria-label="Previous">
+		        			<span aria-hidden="true">&laquo;</span>
+		      			</a>
+		    		</li>
+		    		<li class="page-item"><a class="page-link" href="#">1</a></li>
+		    		<li class="page-item">
+		      			<a class="page-link" href="#" aria-label="Next">
+		        			<span aria-hidden="true">&raquo;</span>
+		      			</a>
+		    		</li>
+		  		</ul>
+				</nav>
+			</div>
+		</div>
 	</div>
 </div>
 
