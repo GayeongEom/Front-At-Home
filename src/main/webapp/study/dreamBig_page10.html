@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+<script  type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+
+$(function() {
+	
+	//사진 첨부시 이미지파일인지 검사 진행 후 프리뷰 띄우기
+	$("#upload").change(function() {
+		
+		$("#preview").html("")
+		
+		//------------------------------
+		
+		var files = this.files
+		
+			
+			if(!files[0].type.includes("image")) {
+				
+				$("#alertImg").click()
+				
+				console.log(this.val())
+				
+				
+			}
+			
+			var reader = new FileReader()
+			
+			reader.onload = function() {
+				
+				console.log(this)
+				
+				//일단 하나만 보여지게 했음 밑에 속성은 멀티플 줬음
+				$("#preview").html(
+						$("<img>")
+						.attr({
+							src: this.result
+							, width: 380
+							, height: 380
+						}))
+				
+			}
+			
+			reader.readAsDataURL(files[i])
+	})
+	
+	//추가 버튼 클릭시 (입력한 내용 추가 후 ) 상품관리페이지로 이동
+	$("#addProduct").click(function() {
+		location.href = "./dreamBig_page9.html"
+	})
+	
+	//취소 버튼 클릭시 '상품 추가를 취소하시겠습니까?' alert 후 상품관리페이지로 이동
+	$("#addCancel").click(function() {
+		
+		$("#alertCancel").click(function() {
+			
+			
+		})
+		
+		
+		
+	})
+	
+	
+	
+})
+
+</script>
+
+
+<style type="text/css">
+
+.container {
+	margin-top: 100px;
+}
+
+#infoinput label {
+	font-weight: bold;
+	width: 80px;
+}
+
+#infoinput input {
+	width: 250px;
+}
+
+#alertImg {
+	width: 0;
+	height: 0;
+	padding: 0;
+	margin: 0;
+	cursor: default;
+	display: none;
+	
+}
+
+#alertCancel {
+	width: 0;
+	height: 0;
+	padding: 0;
+	margin: 0;
+	cursor: default;
+	display: none;
+	
+}
+
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="col-8" style="margin: auto">
+			<div>
+				<div>
+					<img src="./images/register.png" class="mb-2" style="width: 30px; height: 30px;">
+					<span class="fs-4 fw-bold">상품등록</span>
+				</div>
+				<div id="infomation" class="row justify-content-center" style="height: 400px;">
+					<div class="w-50">
+						<div id="preview" style="width: 380px; height: 380px; border: 1px solid #ccc">이미지 미리보기</div>					
+					</div>
+					<div id="infoinput" class="w-50">
+						<label for="name" class="m-3">상품명</label>
+						<input type="text" placeholder="상품명을 입력해주세요." id="name"><br>
+						<label for="price" class="ms-3 me-3">상품 가격</label>
+						<input type="text" placeholder="상품가격을 입력해주세요." id="price"><br>
+						<hr>
+						
+						<label for="size" class="m-3">사이즈</label>
+						<input type="text" placeholder="사이즈를 입력해주세요." id="size"><br>
+						<label for="color" class="ms-3 me-3">색상</label>
+						<input type="text" placeholder="상품 색상을 입력해주세요." id="color"><br>
+						<hr>
+						
+						<label for="amount" class="ms-3 me-3">판매수량</label>
+						<input type="text" placeholder="수량을 입력해주세요." id="amount">
+						<hr>
+						
+						<label for="upload" class="ms-3 me-3">사진 첨부</label>
+						<input type="file" id="upload" multiple="multiple"><br>
+						<!-- Button trigger modal -->
+						<button type="button" id="alertImg" class="btn" data-bs-toggle="modal" data-bs-target="#imgAlertModal"></button>
+						
+						<!-- Modal -->
+						<div class="modal fade" id="imgAlertModal" tabindex="-1" aria-labelledby="imgAlertModalLabel" aria-hidden="true">
+						  <div class="modal-dialog">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <h1 class="modal-title fs-5" id="imgAlertModalLabel">첨부파일 에러</h1>
+						        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						      </div>
+						      <div class="modal-body">
+						      	이미지 파일만 업로드 할 수 있습니다.
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+						      </div>
+						    </div>
+						  </div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="des" class="text-center">
+				<textarea class="w-100" id="sample">웹 에디터 넣을 곳</textarea>
+			</div>
+			<div id="btn" class="row  justify-content-around" style="padding: 0 45px;">
+				<button id="addProduct" class="btn btn-primary m-5" type="submit" style="width: 100px">추가</button>
+				
+				<button id="addCancel" class="btn btn-secondary m-5" type="submit" style="width: 100px">취소</button>
+						<!-- Button trigger modal -->
+						<button type="button" id="alertCancel" class="btn" data-bs-toggle="modal" data-bs-target="#cancelAlertModal"></button>
+						
+						<!-- Modal -->
+						<div class="modal fade" id="cancelAlertModal" tabindex="-1" aria-labelledby="cancelAlertModalLabel" aria-hidden="true">
+						  <div class="modal-dialog">
+						    <div class="modal-content">
+						      <div class="modal-body text-center fs-5" style="margin: 15px;">
+						      	상품 등록을 취소하시겠습니까?
+						      </div>
+						      <div class="modal-footer justify-content-evenly">
+						        <button type="button" id="continueBtn" class="btn btn-primary" style="width: 130px;">계속 작성하기</button>
+						        <button type="button" id="cancelBtn" class="btn btn-secondary" data-bs-dismiss="modal" style="width: 130px;">취소하기</button>
+						      </div>
+						    </div>
+						  </div>
+						</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

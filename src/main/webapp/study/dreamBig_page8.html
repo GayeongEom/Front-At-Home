@@ -2,10 +2,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<title>Insert title here</title>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
-<title>Insert title here</title>
+<script src="https://kit.fontawesome.com/58712691e2.js" crossorigin="anonymous"></script>
 
 <style type="text/css">
 
@@ -18,10 +20,9 @@ a {
 	text-decoration: none;
 }
 
-table {
-	text-align: center;
+.container {
+	margin-top: 100px;
 }
-
 
 
 
@@ -35,27 +36,32 @@ table {
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-1"></div>
-		<div class="col-md-2">
+		<div class="col-1"></div>
+		<div class="col-2" style="margin-top: 30px; padding: 30px;">
 			<div class="list-group">
-				<a href = "#" class="list-group-item-action">대시보드</a>		
-				<a href = "" class="list-group-item-action">회원 관리</a>		
-				<a href = "#" class="list-group-item-action">관리자 관리</a>		
-				<a href = "#" class="list-group-item-action">상품 관리</a>		
-				<a href = "#" class="list-group-item-action">주문 관리</a>		
-				<a href = "#" class="list-group-item-action">리뷰 관리</a>		
-				<a href = "#" class="list-group-item-action">문의 관리</a>		
+				<a href = "./dreamBig_page7.html" class="list-group-item list-group-item-action">대시보드</a>		
+				<a href = "" class="list-group-item list-group-item-action active">회원 관리</a>		
+				<a href = "#" class="list-group-item list-group-item-action">관리자 관리</a>		
+				<a href = "./dreamBig_page9.html" class="list-group-item list-group-item-action">상품 관리</a>		
+				<a href = "#" class="list-group-item list-group-item-action">주문 관리</a>		
+				<a href = "#" class="list-group-item list-group-item-action">리뷰 관리</a>		
+				<a href = "#" class="list-group-item list-group-item-action">문의 관리</a>	
 			</div>
 		</div>
-		<div class="col-md-8">
-			<div>
-				<span class="fs-4 fw-bold" style="margin-right: 200px;">회원관리</span>
-				<input type="checkbox" class="me-2"><span class="me-5">아이디</span>
-				<input type="checkbox" class="me-2"><span class="me-5">회원명</span>
-				<input type="search">
+		<div class="col-8">
+			<div class="mb-4"  style="padding: 0 45px;">
+				<span class="fs-4 fw-bold" style="margin-right: 227px;">회원관리</span>
+				<input type="checkbox" class="me-2"><span class="me-5">활동중</span>
+				<input type="checkbox" class="me-2"><span class="me-5">정지중</span>
+				<div class="input-group w-25" style="display: inline-flex;">
+				  <span class="input-group-text" id="basic-addon1">
+				  	<i class="fa-solid fa-magnifying-glass" style="color: #d2d7e0;"></i>
+				  </span>
+				  <input type="search" class="form-control" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1">
+				</div>				
 			</div>
 			<div>
-			<table class="table table-bordered">
+			<table class="table table-bordered text-center align-middle" style="width: 90%; height: 630px; margin:0 auto;">
 				<thead class="table-light">
 					<th>No.</th>
 					<th>회원 아이디</th>
@@ -185,22 +191,25 @@ table {
 				</tr>
 			</table>
 			</div>
+			<div class="mt-5">
 			<nav aria-label="Page navigation example">
-		 		<ul class="pagination">
-		  			<li class="page-item">
-		     			<a class="page-link" href="#" aria-label="Previous">
-		       			<span aria-hidden="true">&laquo;</span>
-		     			</a>
-		   		</li>
-		   		<li class="page-item"><a class="page-link" href="#">1</a></li>
-		   		<li class="page-item">
-		     			<a class="page-link" href="#" aria-label="Next">
-		       			<span aria-hidden="true">&raquo;</span>
-		     			</a>
-		   		</li>
-		 		</ul>
+		  		<ul class="pagination">
+		   			<li class="page-item disabled">
+		      			<a class="page-link" href="#" aria-label="Previous">
+		        			<span aria-hidden="true">&laquo;</span>
+		      			</a>
+		    		</li>
+		    		<li class="page-item active"><a class="page-link" href="#">1</a></li>
+		    		<li class="page-item">
+		      			<a class="page-link" href="#" aria-label="Next">
+		        			<span aria-hidden="true">&raquo;</span>
+		      			</a>
+		    		</li>
+		  		</ul>
 			</nav>
+			</div>
 		</div>
+		<div class="col-1"></div>
 	</div>
 </div>
 
