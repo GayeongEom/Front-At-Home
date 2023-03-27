@@ -11,19 +11,22 @@
 <script src="https://cdn.tiny.cloud/1/55ehuvxc8umd9m8voamcfvy6e1uv85drgw9fc3q6x89vz6g8/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 <script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@2/dist/tinymce-jquery.min.js"></script>
   
+
 <script>
-  $('textarea#tiny').tinymce({
+$(function() {
+	  $('textarea#tiny').tinymce({
     height: 500,
     menubar: false,
     plugins: [
       'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
       'anchor', 'searchreplace', 'visualblocks', 'fullscreen',
-      'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount'
+      'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount','image'
     ],
-    toolbar: 'undo redo | blocks | bold italic backcolor | ' +
+    toolbar: 'undo redo | blocks | image | bold italic backcolor ' +
       'alignleft aligncenter alignright alignjustify | ' +
-      'bullist numlist outdent indent | removeformat | help'
+      'bullist numlist outdent indent | removeformat | help',
   });
+})
 </script>
 
 
@@ -190,7 +193,7 @@ $(function() {
 				</div>
 			</div>
 <div>
-  <textarea id="tiny">&lt;p&gt;Encoded HTML content&lt;/p&gt;</textarea>
+  <textarea id="tiny" placeholder="상품 상세설명을 작성해주세요"></textarea>
 </div>
 			<div id="btn" class="row  justify-content-around" style="padding: 0 45px;">
 				<button id="addProduct" class="btn btn-primary m-5" type="submit" style="width: 100px">추가</button>
@@ -217,6 +220,11 @@ $(function() {
 		</div>
 	</div>
 </div>
+
+
+
+
+
 
 </body>
 </html>
