@@ -7,7 +7,25 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
-<script  type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+<script src="https://cdn.tiny.cloud/1/55ehuvxc8umd9m8voamcfvy6e1uv85drgw9fc3q6x89vz6g8/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@2/dist/tinymce-jquery.min.js"></script>
+  
+<script>
+  $('textarea#tiny').tinymce({
+    height: 500,
+    menubar: false,
+    plugins: [
+      'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+      'anchor', 'searchreplace', 'visualblocks', 'fullscreen',
+      'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount'
+    ],
+    toolbar: 'undo redo | blocks | bold italic backcolor | ' +
+      'alignleft aligncenter alignright alignjustify | ' +
+      'bullist numlist outdent indent | removeformat | help'
+  });
+</script>
+
 
 <script type="text/javascript">
 
@@ -171,9 +189,9 @@ $(function() {
 					</div>
 				</div>
 			</div>
-			<div id="des" class="text-center">
-				<textarea class="w-100" id="sample">웹 에디터 넣을 곳</textarea>
-			</div>
+<div>
+  <textarea id="tiny">&lt;p&gt;Encoded HTML content&lt;/p&gt;</textarea>
+</div>
 			<div id="btn" class="row  justify-content-around" style="padding: 0 45px;">
 				<button id="addProduct" class="btn btn-primary m-5" type="submit" style="width: 100px">추가</button>
 				
